@@ -2,7 +2,7 @@
 
 Join me on my NetDevOps journey as we explore the future of networking, automation, and everything in between!
 
-[moalaa.com](assets/images/logo.jpg)
+![moalaa.com](assets/images/logo.jpg)
 
 ## MoAlaa.com Website:
 [moalaa.com](https://moalaa.com/)
