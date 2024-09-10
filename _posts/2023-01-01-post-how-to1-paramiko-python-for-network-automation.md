@@ -1,5 +1,5 @@
 ---
-title: "Why Python is the Most Popular Choice for Network Automation?"
+title: "How To(1) Paramiko & Python for Network Automation"
 header:
   overlay_image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
 last_modified_at: 2023-01-01
@@ -62,12 +62,17 @@ Because that will initiate an **interactive shell** session on the SSH “server
 
 > **In this case, Paramiko doesn’t check whether it is an error message or a success message, It will just print as it is.**
 
-## And now, let’s go to our python terminal and start writing our first code:
+## First code:
+
+Now, let’s go to our python terminal and start writing our first code:
 
 If you need to build your **Separated and Isolated Python Development Environment for Learning**.
+
 So, you can follow my latest tutorial.
 
-### First, we need to Install Paramiko:
+### Install Paramiko
+
+First, we need to Install Paramiko:
 
 ```terminal
 pip install paramiko
@@ -76,7 +81,10 @@ OR
 
 python3 -m pip install paramiko
 ```
-### Then, check Cisco Router reachability and accessibility:
+
+### Check reachability and accessibility
+
+Then, check Cisco Router reachability and accessibility:
 
 ```bash
 moalaa@devnet-automation-01:~$ ping R1.MoAlaa.com -c 2
@@ -102,7 +110,10 @@ C
 
 R1-ASR1#
 ```
-### Then, start the Python shell, simply type python3 and hit Enter in the terminal:
+
+### Start the Python shell
+
+Then, start the Python shell, simply type python3 and hit Enter in the terminal:
 
 ```python
 (MoAlaa_DevNet_env) moalaa@devnet-automation-01:~$ python3
@@ -111,37 +122,51 @@ Python 3.8.10 (default, Nov 14 2022, 12:59:47)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
-### Then, we need to import Paramiko:
+
+### Import Paramiko
+
+Then, we need to import Paramiko:
+
 ```python
 >>> from paramiko import client
 >>> 
 ```
-### Then, we will define the host details.
+
+### Host details
+Then, we will define the host details.
 
 Defining a string **hostname**. So the device’s name is “R1.MoAlaa.com“.
 Either, we can give the IP Address or Hostname here.
-```python,
+
+```python
 >>> hostname = "R1.MoAlaa.com"
 ```
-### Defining a string “username“. So the device’s username is “moalaa“.
+
+Defining a string “username“. So the device’s username is “moalaa“.
+
 ```python
 >>> username = "moalaa"
 ```
-### Defining a string “password“. So the device’s password is “cisco“.
+
+Defining a string “password“. So the device’s password is “cisco“.
 
 ```python
 >>> password = "cisco"
 ```
-### Now we’ll create SSH client “ssh_client“. So that will be “client.SSHClient()“.
+
+Now we’ll create SSH client “ssh_client“. So that will be `client.SSHClient()`.
+
 ```python
 >>> ssh_client = client.SSHClient()
 ```
-### Set policy “AutoAddPolicy” to use when connecting to devices without a known host key.
+
+Set policy “AutoAddPolicy” to use when connecting to devices without a known host key.
 
 ```python
 >>> ssh_client.set_missing_host_key_policy(client.AutoAddPolicy())
 ```
-### Now, let’s connect to our Router 🙂
+
+Now, let’s connect to our Router:
 
 ```python
 >>> ssh_client.connect(hostname=hostname,
@@ -151,6 +176,7 @@ Either, we can give the IP Address or Hostname here.
 ...                    look_for_keys=False, allow_agent=False)
 >>> 
 ```
+
 Now, it should be connected successfully.
 
 > Now, if you want to execute a command, such as “show interfaces description”.
@@ -158,9 +184,11 @@ Now, it should be connected successfully.
 We need first initiate, ```invoke_shell()``` or the ```exec_command()``` method.
 
 So, we will create another variable “device_access” and using ```invoke_shell()``` method.
+
 ```python
 >>> device_access = ssh_client.invoke_shell()
 ```
+
 Now, we’ll try to send the commands ```terminal len 0``` and `show interfaces description` directly and see what happens.
 We have a method called `send()` which will use the initiated SSH channel and just send the data “command” in our case.
 
@@ -181,6 +209,7 @@ We need to set the bytes of data that we need to receive. So we will give the ma
 ```python
 >>> output = device_access.recv(65535)
 ```
+
 Now, we’ll try printing the output on our screen.
 
 > Note: We need to use the `decode()` method to convert the output 
@@ -229,7 +258,9 @@ Lo1000                         up             up
 R1-ASR1#
 >>> 
 ```
-### Finally, we need to close this SSH connection by using `close()` method.
+### Finally
+
+We need to close this SSH connection by using `close()` method.
 
 ```python
 >>> ssh_client.close()
