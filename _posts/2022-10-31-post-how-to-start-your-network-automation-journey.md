@@ -1,25 +1,12 @@
 ---
 title: "How To Start Your Network Automation Journey?"
 header:
-  overlay_image: /assets/images/Network_Automation_Journey.jpg
+  image: /assets/images/Network_Automation_Journey.jpg
 last_modified_at: 2022-10-31
 categories:
   - Python
-  - Linux
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - SSH
   - Network-Automation
-  - SNMP
-  - VTYs
-  - REST-APIs
-  - NETCONF
   - Configuration-Management
-  - YANG
-  - Script
-  - Open-Source
-  - Ansible
 tags:
   - Python
   - Paramiko
@@ -52,6 +39,7 @@ tags:
   - sFlow
   - Controllers
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 # How To Start Your Network Automation Journey?
 
@@ -396,11 +384,11 @@ RP/0/0/CPU0:R11-XR1#crypto key generate dsa
 
 ## Why we will use Ansible for network automation
 
-1) Agentless.
-2) Free and Open Source Software (FOSS).
-3) Extensible.
-4) Integrating into Existing DevOps Workflows.
-5) Network-Wide and Ad Hoc Changes.
+1. Agentless.
+2. Free and Open Source Software (FOSS).
+3. Extensible.
+4. Integrating into Existing DevOps Workflows.
+5. Network-Wide and Ad Hoc Changes.
 
 ### 1. Agentless
 

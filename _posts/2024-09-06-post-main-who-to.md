@@ -9,6 +9,15 @@ tags:
 toc: true # On this page
 ---
 
+[Quick-Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
+[Working with Posts](https://mmistakes.github.io/minimal-mistakes/docs/posts/)
+
+[Portfolio](https://mmistakes.github.io/minimal-mistakes/portfolio/)
+
+[layout-header-image-text-readability](https://mmistakes.github.io/minimal-mistakes/layout-header-image-text-readability/)
+
+
 A variety of common markup showing how the theme styles them.
 
 ## Header two
