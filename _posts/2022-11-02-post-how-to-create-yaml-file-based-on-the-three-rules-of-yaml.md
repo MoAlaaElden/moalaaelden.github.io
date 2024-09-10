@@ -1,7 +1,7 @@
 ---
 title: "How To Create YAML file based on The Three Rules of YAML"
 header:
-  overlay_image: /assets/images/yaml-file.webp
+  image: /assets/images/yaml-file.webp
 last_modified_at: 2022-11-02
 categories:
   - Python
@@ -14,6 +14,7 @@ tags:
   - JSON
   - Network-Automation
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 # How To Create YAML file based on The Three Rules of YAML
 

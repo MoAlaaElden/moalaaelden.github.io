@@ -1,7 +1,7 @@
 ---
 title: "How to Create an Isolated Python Development Environment using venv"
 header:
-  overlay_image: /assets/images/python-virtual-environment.webp
+  image: /assets/images/python-virtual-environment.webp
 last_modified_at: 2023-01-01
 categories:
   - Python
@@ -14,6 +14,7 @@ tags:
   - Virtual-Environment
   - Network-Automation
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 # How to Create an Isolated Python Development Environment using venv
 

@@ -1,7 +1,7 @@
 ---
 title: "How To(1) Paramiko & Python for Network Automation"
 header:
-  overlay_image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
+  image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
 last_modified_at: 2023-01-01
 categories:
   - Python
@@ -18,6 +18,7 @@ tags:
   - SSH
   - Network-Automation
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 # How To(1) Paramiko & Python for Network Automation
 

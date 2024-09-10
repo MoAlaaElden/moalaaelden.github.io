@@ -1,7 +1,7 @@
 ---
 title: "Why Python is the Most Popular Choice for Network Automation?"
 header:
-  overlay_image: /assets/images/Network_Automation.webp
+  image: /assets/images/Network_Automation.webp
 last_modified_at: 2023-01-23
 categories:
   - Python
@@ -14,6 +14,7 @@ tags:
   - NAPALM
   - Network-Automation
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 
 # Why Python is the Most Popular Choice for Network Automation?

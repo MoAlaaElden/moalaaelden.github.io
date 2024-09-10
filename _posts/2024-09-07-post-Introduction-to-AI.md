@@ -1,7 +1,7 @@
 ---
 title: "Introduction to AI (Artificial Intelligence)."
 header:
-  overlay_image: /assets/images/12-AI_ML_DL.png
+  image: /assets/images/12-AI_ML_DL.png
 last_modified_at: 2024-09-07
 categories:
   - AI
@@ -14,6 +14,7 @@ tags:
   - Deep-Learning  
   - Machine-Learning
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 
 ## Introduction to AI (Artificial Intelligence)

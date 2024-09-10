@@ -1,23 +1,24 @@
 ---
 title: "Are you know the difference between LXC vs LXD vs Docker Containers? let’s see it."
 header:
-  overlay_image: /assets/images/2022-10-22-post-lxc-lxd-docker.webp
+  image: /assets/images/2022-10-22-post-lxc-lxd-docker.webp
 last_modified_at: 2022-10-22
 categories:
   - Docker
-  - Hyper-V
-  - Linux
   - LXC
   - LXD
-  - Network-Automation
-  - Ubuntu
-  - Virtual-Machine
-  - Virtualization
 tags:
   - Application-Containers
   - Containers
   - System-Containers
+  - Network-Automation
+  - Ubuntu
+  - Virtual-Machine
+  - Virtualization
+  - Hyper-V
+  - Linux
 toc: true # On this page
+toc_sticky: true # Sticky Table of Contents
 ---
 
 
