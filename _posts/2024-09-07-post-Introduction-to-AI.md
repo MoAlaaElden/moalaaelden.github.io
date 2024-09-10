@@ -1,7 +1,7 @@
 ---
 title: "Introduction to AI (Artificial Intelligence)."
 header:
-  overlay_image: /assets/images/2022-10-22-post-lxc-lxd-docker.webp
+  overlay_image: /assets/images/12-AI_ML_DL.png
 last_modified_at: 2024-09-07
 categories:
   - AI
@@ -20,4 +20,4 @@ toc: true # On this page
 
 AI is a branch of computer science dealing with creating software that mimics human intelligence.
 
-![moalaa.com](assets/images/AI_Intro/1-Artificial_Intelligence.png)
+![moalaa.com](assets/images/1-Artificial_Intelligence.png)
