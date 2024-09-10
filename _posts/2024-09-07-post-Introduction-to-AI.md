@@ -18,3 +18,6 @@ toc: true # On this page
 
 ### Introduction to AI (Artificial Intelligence)
 
+AI is a branch of computer science dealing with creating software that mimics human intelligence.
+
+![moalaa.com](assets/images/AI_Intro/1-Artificial_Intelligence.png)
