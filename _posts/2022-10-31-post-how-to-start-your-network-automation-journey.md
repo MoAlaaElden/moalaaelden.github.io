@@ -1,15 +1,25 @@
 ---
 title: "How To Start Your Network Automation Journey?"
 header:
-  overlay_image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
+  overlay_image: /assets/images/Network_Automation_Journey.jpg
 last_modified_at: 2022-10-31
 categories:
   - Python
+  - Linux
   - Paramiko
   - Netmiko
   - NAPALM
   - SSH
   - Network-Automation
+  - SNMP
+  - VTYs
+  - REST-APIs
+  - NETCONF
+  - Configuration-Management
+  - YANG
+  - Script
+  - Open-Source
+  - Ansible
 tags:
   - Python
   - Paramiko
@@ -17,6 +27,30 @@ tags:
   - NAPALM
   - SSH
   - Network-Automation
+  - vSwitches
+  - Container
+  - Linux
+  - SNMP
+  - VTYs
+  - REST-APIs
+  - NETCONF
+  - Configuration-Management
+  - PyEZ
+  - YANG
+  - YDK
+  - Script
+  - Open-Source
+  - CFEngine
+  - Chef
+  - Puppet
+  - SaltStack
+  - Ansible
+  - Agentless
+  - Telemetry
+  - NetFlow
+  - IPFIX
+  - sFlow
+  - Controllers
 toc: true # On this page
 ---
 # How To Start Your Network Automation Journey?
