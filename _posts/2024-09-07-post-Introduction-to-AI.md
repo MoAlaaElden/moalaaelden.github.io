@@ -20,4 +20,4 @@ toc: true # On this page
 
 AI is a branch of computer science dealing with creating software that mimics human intelligence.
 
-![moalaa.com](assets/images/1-Artificial_Intelligence.png)
+![AI]({{ site.url }}{{ site.baseurl }}/assets/images/1-Artificial_Intelligence.png)
