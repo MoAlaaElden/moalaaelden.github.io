@@ -18,53 +18,57 @@ toc_sticky: true # Sticky Table of Contents
 
 ## `/` – The root directory
 
-All the files and directories in Linux are located under **root** represented by **‘/’**.
+All the files and directories in Linux are located under **root** represented by **/**.
 
 If you look at the directory structure, you’ll realize that it is similar to a plant’s root.
 
 ## `/bin` – Binaries
 
-The ‘/bin’ directly contains the executable files of many basic shell commands like ls, cp, cd etc.
+The **/bin** directly contains the **executable files** of many basic **shell commands like ls, cp, cd etc**.
 
-Mostly the programs are in binary format here and accessible by all the users in the Linux system.
+Mostly the programs are in binary format here and **accessible by all the users in the Linux system**.
 
 ## `/dev` – Device files
 
-This directory only contains special files, including those relating to the devices.
+This directory only contains **special files**, including those **relating to the devices**.
 
-These are virtual files, not physically on the disk.
+These are **virtual files**, not physically on the disk.
 
 ## `/etc` – Configuration files
 
-The **/etc** directory contains the core configuration files of the system, use primarily by the administrator and services, such as the password file and networking files.
+The **/etc** directory contains the **core configuration files** of the system, use primarily by the administrator and services, such as the **password file** and **networking files**.
 
 ## `/usr` – User binaries and program data
 
-In **/usr** go all the executable files, libraries, source of most of the system programs.
+In **/usr** go all the **executable files**, **libraries** and source of most of the **system programs**.
 
-For this reason, most of the files contained therein are read­only (for the normal user)
+For this reason, most of the files contained therein are **read­only** (for the normal user)
 
 ### `/usr/bin`
-Contains basic user commands
+Contains **basic user** commands
 
 ### `/usr/sbin`
-Contains additional commands for the administrator
+Contains additional commands for the **administrator**
 
 ### `/usr/lib`
-Contains the system libraries
+Contains the **system libraries**
 
 ### `/usr/share`
-Contains documentation or common to all libraries, for example `/usr/share/man` contains the text of the manpage
+Contains **documentation** or common to all libraries, for example `/usr/share/man` contains the text of the manpage
 
 ## `/home` – User personal data
 
-Home directory contains personal directories for the users. It contains the user data and user-specific configuration files.
+Home directory contains **personal directories** for the users. 
+
+It contains the **user data** and **user-specific configuration files**.
 
 As a user, you’ll put your **personal files, notes, programs .etc** in your home directory.
 
 ## `/lib` – Shared libraries
 
-Libraries are basically codes that can be used by the executable binaries. The `/lib` directory holds the libraries needed by the binaries in `/bin` (for user) and `/sbin` (for superuser) directories.
+**Libraries** are basically codes that can be used by the **executable binaries**. 
+
+The `/lib` directory holds the **libraries** needed by the **binaries** in `/bin` (for **user**) and `/sbin` (for **superuser**) directories.
 
 ## `/sbin` – System binaries
 
@@ -76,18 +80,21 @@ You can think of the **‘s’** in **‘sbin’** as **super or sudo**.
 
 This directory holds **temporary files**. Many applications use this directory to store temporary files.
 
-**/tmp** directory is emptied when system restarts. Some Linux systems also delete old files automatically
+**/tmp** directory is **emptied when system restarts**. 
 
-Don’t store anything important here `/tmp`.
+Some Linux systems also **delete old files automatically**
+
+**Don’t store anything important here `/tmp`**
 {: .notice--warning}
 
 ## `/var` – Variable data files
 
 **Var**, short for **variable**, is where programs store runtime information like **system logging**, **user tracking, caches**, and other files that system programs create and manage.
 
-> The files stored in **/var** are **NOT cleaned automatically** and hence it provides a good place for sysadmins to look for information.
+The files stored in **`/var`** are **NOT cleaned automatically** and hence it provides a good place for sysadmins to look for information.
+{: .notice--info}
 
-For example, if you want to check the login history in your Linux system, just check the content in `/var/log/wtmp`.
+For example, if you want to check the **login history** in your Linux system, just check the content in `/var/log/wtmp`.
 
 ## `/boot` – Boot files
 
@@ -120,10 +127,10 @@ The **/srv** directory contains data for **services** provided by the system.
 
 For example, if you run a HTTP server, it’s a good practice to store the website data in the **/srv** directory.
 
-There are more such directories but I think this is enough to understand the Linux directory structure and its usage.
+**There are more such directories but I think this is enough to understand the Linux directory structure and its usage.**
 {: .notice--info}
 
-Save this image for quick reference to the directory structure in Linux systems.
+**Save this image for quick reference to the directory structure in Linux systems.**
 {: .notice--info}
 
 ![filesystem2]({{ site.url }}{{ site.baseurl }}/assets/images/linux-filesystem2.webp)
