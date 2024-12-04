@@ -1,20 +1,22 @@
 ---
-title: "Docker cheat-sheet"
+title: "Docker Cheat-Sheet"
 header:
   image: /assets/images/Docker-cheat-sheet.png
-last_modified_at: 2022-10-22
+last_modified_at: 2022-12-04
 categories:
   - Docker
+  - Cheat-Sheet
 tags:
   - Docker
   - Application-Containers
   - Containers
   - Network-Automation
+  - Cheat-Sheet
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
 
-# Docker cheat-sheet
+# Docker Cheat-Sheet
 
 ## Running Containers
 
