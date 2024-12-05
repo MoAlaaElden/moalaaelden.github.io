@@ -327,3 +327,63 @@ defaults:
       comments: # true
       share: true
       related: true
+
+===============================================================================
+In the Jekyll **Minimal Mistakes** theme, the `layout` property controls the structure and appearance of your pages or posts. Here are the common layout options and their effects:
+
+### Common Layout Options in Minimal Mistakes
+1. **`single`**  
+   - A narrow layout with a central column.  
+   - Ideal for blog posts or content-focused pages.
+   - Can include metadata like tags, categories, and author information.
+
+2. **`default`**  
+   - The full-width layout with no sidebars by default.  
+   - Suitable for pages like "About" or custom landing pages.
+   - Does not automatically include pagination features unless explicitly configured.
+
+3. **`home`**  
+   - Used for the homepage of your site.  
+   - Displays a list of recent posts or custom content defined in `_config.yml`.
+
+4. **`archive`**  
+   - Used for displaying a list of posts (like a blog index or category/tag archive).  
+   - Works well with Jekyll pagination.
+
+5. **`category` / `tag`**  
+   - Specifically designed for category and tag archive pages.
+
+6. **`splash`**  
+   - A splash page layout with minimal distractions.  
+   - Great for announcements or welcome pages.
+
+7. **`single-sidebar`**  
+   - A single column layout with a sidebar for navigation or additional content.
+
+8. **`search`**  
+   - Used for displaying search results if search functionality is configured.
+
+### Restoring Pagination
+If you lost pagination after changing the layout:
+1. Ensure you’re using a layout that supports pagination (`home`, `archive`, or a custom one designed for post lists).
+2. Check your `_config.yml` for the following settings:
+   ```yaml
+   paginate: 5 # Number of posts per page
+   paginate_path: "/page/:num/" # URL path for pagination
+   ```
+3. If you use a custom page, ensure the `layout` is set to one that supports pagination:
+   ```yaml
+   layout: home
+   ```
+
+### Example Default Configuration for Posts
+If you want a layout that supports both pagination and proper post display:
+```yaml
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+```

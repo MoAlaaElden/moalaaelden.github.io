@@ -93,8 +93,8 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: home
-      author_profile: false
+      layout: single
+      author_profile: true
       read_time: true
       comments: true
       share: true
