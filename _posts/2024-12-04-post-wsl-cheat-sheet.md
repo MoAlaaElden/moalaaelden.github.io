@@ -2,7 +2,7 @@
 title: "WSL Cheat-Sheet"
 header:
   image: /assets/images/linux-on-windows.webp
-last_modified_at: 2022-10-22
+last_modified_at: 2022-12-04
 categories:
   - WSL
   - Cheat-Sheet
