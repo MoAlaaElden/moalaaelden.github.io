@@ -1,5 +1,5 @@
 ---
-title: "Bash script for Network Automation Python Development Environment Setup"
+title: "Bash Script for Setting Up a Python Development Environment for Network Automation"
 header:
   image: /assets/images/bash-script-for-network-automation-python-development-environment-setup.jpg
 last_modified_at: 2024-12-05
@@ -23,7 +23,7 @@ toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
 
-This is a comprehensive Bash script for setting up a Python virtual environment tailored for network automation engineers.
+This is a comprehensive Bash script for setting up a Python virtual environment for network automation engineers.
 
 ```bash
 #!/bin/bash

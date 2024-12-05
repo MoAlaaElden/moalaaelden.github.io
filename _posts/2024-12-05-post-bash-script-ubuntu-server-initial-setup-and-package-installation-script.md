@@ -4,10 +4,12 @@ header:
   image: /assets/images/bash-script-ubuntu-server-initial-setup-and-package-installation-script.png
 last_modified_at: 2024-12-05
 categories:
+  - Bash-Script
   - Linux
   - Ubuntu
   - Server
 tags:
+  - Bash-Script
   - Linux
   - Filesystem
   - Ubuntu
