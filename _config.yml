@@ -58,9 +58,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Mohamed Alaa"
-  avatar : "/assets/images/moalaa_400x400.jpg"
-  bio    : "Join me on my NetDevOps journey as we explore the future of networking, automation, and everything in between!."
+  name: "Mohamed Alaa"
+  avatar: "/assets/images/moalaa_400x400.jpg"
+  bio: "Join me on my NetDevOps journey as we explore the future of networking, automation, and everything in between!."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -94,7 +94,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
