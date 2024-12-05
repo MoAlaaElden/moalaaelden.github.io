@@ -153,7 +153,7 @@ echo "To activate: source ~/python-projects/network-automation/venv/bin/activate
 
 ```
 
-Here's a breakdown of what the script does:
+## Here's a breakdown of what the script does:
 
 1. Checks for sudo privileges
 2. Installs system-level dependencies
@@ -167,18 +167,18 @@ Here's a breakdown of what the script does:
    - Development tools: Black, Pylint, Pytest
    - Extras: Pandas, Rich, Tabulate
 
-Key features:
+## Key features:
 - Creates a virtual environment in `~/python-projects/network-automation/venv`
 - Generates a `requirements.txt` file
 - Adds a startup script to automatically activate the venv
 - Sets up basic Git configuration
 
-To use the script:
+## To use the script:
 1. Save it as `network-automation-setup.sh`
 2. Make it executable: `chmod +x network-automation-setup.sh`
 3. Run with sudo: `sudo ./network-automation-setup.sh`
 
-Post-installation:
+## Post-installation:
 - Restart your terminal or run `source ~/.bashrc`
 - The virtual environment will automatically activate when you open a new terminal
 

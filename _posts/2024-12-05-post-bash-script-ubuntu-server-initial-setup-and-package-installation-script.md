@@ -106,7 +106,7 @@ docker -v
 
 ```
 
-Here's a breakdown of what the script does:
+## Here's a breakdown of what the script does:
 
 1. Checks if the script is run with sudo/root privileges
 2. Updates package lists
@@ -117,12 +117,11 @@ Here's a breakdown of what the script does:
 7. Installs Docker Engine, Docker CLI, Containerd, and Docker Compose
 8. Cleans up unnecessary packages
 
-A few important notes:
-- Make sure to replace `your_username` with the actual username if you want to add a user to the docker group
+## A few important notes:
 - The script uses `-y` to automatically answer "yes" to prompts
 - It follows Docker's official installation instructions for Ubuntu
 
-To use the script:
+## To use the script:
 1. Save it to a file (e.g., `ubuntu-setup.sh`)
 2. Make it executable: `chmod +x ubuntu-setup.sh`
 3. Run with sudo: `sudo ./ubuntu-setup.sh`
