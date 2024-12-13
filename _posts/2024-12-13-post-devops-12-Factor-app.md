@@ -122,24 +122,32 @@ Store config in the environment
 
 When building apps, it’s important to manage settings (called *configuration*) that can change based on where your app is running—like on your laptop, a test server, or live for users. Here's what you need to know:
 
-### What is App Configuration?
+### App Configuration
+**What is App Configuration?**
+
 It includes:
 - Connections to services like databases or file storage.
 - Passwords or keys for tools like Twitter or AWS.
 - Deployment-specific details like website addresses.
 
-### Why Avoid Hardcoding Config?
+### Hardcoding Config
+**Why Avoid Hardcoding Config?**
+
 Some apps store these settings directly in their code. That’s risky because:
 - It’s hard to update settings without changing the code.
 - It could expose sensitive info if someone sees your code.
 
-### What's Wrong with Config Files?
+### Config Files
+**What's Wrong with Config Files?**
+
 Using files to store settings (like `config.yml`) is better than hardcoding but has issues:
 - They can be accidentally shared with your code.
 - Config files are often scattered and hard to manage.
 - They might only work with specific programming languages.
 
-### The Best Solution: Environment Variables
+### Environment Variables
+**The Best Solution Environment Variables**
+
 Environment variables are simple settings stored outside your app’s code. They’re:
 - Easy to update without touching code.
 - Safe from accidentally being shared in your codebase.
@@ -178,6 +186,8 @@ Treat backing services as attached resources
 Strictly separate build and run stages
 # 6. Processes
 Execute the app as one or more stateless processes
+
+
 # 7. Port binding
 Export services via port binding
 # 8. Concurrency
@@ -189,14 +199,18 @@ When building apps in Python, you need a plan for handling tasks (concurrency) a
 
 ---
 
-### What Are Processes?  
+### Processes
+**What Are Processes?**
+
 A process is just a running program. Apps can have one or more processes, each doing different tasks. For example:  
 - A **web process** handles user requests (e.g., with Django or Flask).  
 - A **worker process** handles background jobs (e.g., with Celery or RQ).  
 
 ---
 
-### Why Use Multiple Processes?  
+### Multiple Processes
+**Why Use Multiple Processes?**
+
 Using multiple processes lets your app:  
 1. **Handle Different Workloads**: Assign specific tasks to different processes (e.g., web requests vs. background tasks).  
 2. **Scale Easily**: Add more processes to handle more traffic without changing your app’s code.  
@@ -205,7 +219,9 @@ Using multiple processes lets your app:
 
 ![Concurrency1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/8-Concurrency1.png)
 
-### How to Manage Concurrency in Python  
+### Concurrency in Python
+**How to Manage Concurrency in Python**
+
 Python has tools to handle tasks efficiently:  
 - **Threads**: For lightweight tasks within one process.  
 - **Async/await**: For event-driven tasks (e.g., `asyncio`).  
@@ -213,7 +229,8 @@ Python has tools to handle tasks efficiently:
 
 ---
 
-### How to Scale Your App  
+### How to Scale Your App
+
 1. **Add More Processes**: Instead of making one process bigger, run more processes across different machines (horizontal scaling).  
    - Example: Use multiple web servers with a load balancer to share traffic.  
 
@@ -223,14 +240,16 @@ Python has tools to handle tasks efficiently:
 
 ---
 
-### Tools to Simplify Scaling  
+### Tools to Simplify Scaling
+
 - **Gunicorn**: Manages web processes for Python frameworks like Django.  
 - **Celery**: Runs background tasks (like sending emails).  
 - **Foreman** or **Honcho**: Helps manage multiple processes during development.  
 
 ---
 
-### Best Practices  
+### Best Practices
+
 - Let the OS or tools like **Docker** or **systemd** handle process restarts and logs.  
 - Avoid manually managing processes (e.g., no PID files).  
 
