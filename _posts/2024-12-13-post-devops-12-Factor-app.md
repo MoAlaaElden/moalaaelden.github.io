@@ -27,7 +27,7 @@ In the modern era, Software is commonly delivered as a service: called web apps,
 The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).
 
 # The Twelve Factors
-## 1. Codebase
+# 1. Codebase
 One codebase tracked in revision control, many deploys
 
 ![Codebase1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase1.png)
@@ -44,7 +44,7 @@ There is only one codebase per app, but there will be many deploys of the app. A
 
 ![Codebase4]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase4.png)
 
-## 2. Dependencies
+# 2. Dependencies
 Explicitly declare and isolate dependencies
 
 ### Dependency Isolation 
@@ -113,7 +113,7 @@ CMD python app.py
 ```
 - Check My Tutorials for Docker [Here](https://moalaaelden.wordpress.com/category/docker/) and [Here](https://moalaa.com/categories/#docker)
 
-## 3. Config
+# 3. Config
 Store config in the environment
 
 **App Configuration Basics: The Easy Way to Manage Settings**
@@ -172,15 +172,15 @@ Instead of grouping settings by environment (like "staging" or "production"), tr
 
 Using these tips will make managing your app’s settings simpler, safer, and ready for any situation!
 
-## 4. Backing services
+# 4. Backing services
 Treat backing services as attached resources
-## 5. Build, release, run
+# 5. Build, release, run
 Strictly separate build and run stages
-## 6. Processes
+# 6. Processes
 Execute the app as one or more stateless processes
-## 7. Port binding
+# 7. Port binding
 Export services via port binding
-## 8. Concurrency
+# 8. Concurrency
 Scale out via the process model
 
 **Scaling Python Apps Made Simple**  
@@ -238,13 +238,13 @@ Python has tools to handle tasks efficiently:
 
 By using multiple processes and the right tools, you can make your Python app scalable, efficient, and ready for any workload!  
 
-## 9. Disposability
+# 9. Disposability
 Maximize robustness with fast startup and graceful shutdown
-## 10. Dev/prod parity
+# 10. Dev/prod parity
 Keep development, staging, and production as similar as possible
-## 11. Logs
+# 11. Logs
 Treat logs as event streams
-## 12. Admin processes
+# 12. Admin processes
 Run admin/management tasks as one-off processes
 
 [References from 12factor](https://12factor.net/ "12factor")
