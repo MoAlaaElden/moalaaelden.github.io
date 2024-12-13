@@ -1,7 +1,7 @@
 ---
 title: "DevOps - The Twelve Factor App methodology"
 header:
-  image: /assets/images/12-Factor-App/1-Codebase1.png
+  image: /assets/images/12-Factor-App/12-factor-app.png
 last_modified_at: 2024-12-13
 categories:
   - DevOps
@@ -46,6 +46,73 @@ There is only one codebase per app, but there will be many deploys of the app. A
 
 ## 2. Dependencies
 Explicitly declare and isolate dependencies
+
+### Dependency Isolation 
+
+![Dependencies1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/2-Dependencies1.png)
+
+- Libraries installed through a packaging system can be installed `system-wide` (known as `site packages`) or scoped into the directory containing the app (known as `vendoring` or `bundling`).
+- A twelve-factor app never relies on implicit existence of `system-wide` packages, it uses a dependency isolation tool during execution such as `python3-venv`. 
+
+- Check My Tutorial for [How to Create an Isolated Python Development Environment using venv](https://moalaa.com/python/venv/virtual-environment/network-automation/how-to-create-an-isolated-python-development-environment-using-venv/)
+
+```bash
+➜  12-Factor-App git:(main) ✗ python3 -m venv venv
+➜  12-Factor-App git:(main) ✗ ls
+app.py  requirements.txt  venv
+➜  12-Factor-App git:(main) ✗
+➜  12-Factor-App git:(main) ✗ source venv/bin/activate
+(venv) ➜  12-Factor-App git:(main) ✗
+```
+
+- It declares all dependencies, completely and exactly, via a dependency declaration manifest.
+
+```python
+(venv) ➜  12-Factor-App git:(main) ✗ cat app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def welcomeToMoAlaa():
+    return "Welcome to MoAlaa"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
+
+(venv) ➜  12-Factor-App git:(main) ✗
+```
+
+```bash
+(venv) ➜  12-Factor-App git:(main) ✗ cat requirements.txt
+flask==2.1.3
+Werkzeug==2.2.2
+(venv) ➜  12-Factor-App git:(main) ✗
+```
+### System Tools Isolation 
+
+![Dependencies2]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/2-Dependencies2.png)
+
+- If the app needs to shell out to a `system tool` such as `curl`, that tool should be vendored into the app.
+- Docker provides the ability to package and run an application in a loosely isolated environment called a container. 
+- The isolation and security lets you run many containers simultaneously on a given host.
+
+```bash
+(venv) ➜  12-Factor-App git:(main) ✗ ls
+Dockerfile  app.py  requirements.txt  venv
+```
+```bash
+(venv) ➜  12-Factor-App git:(main) ✗ cat Dockerfile
+FROM python:3:10-alpine
+WORKDIR /12-Factor-App
+COPY requirements.txt /12-Factor-App
+RUN pip install -r requirements.txt --no-cache-dir
+COPY . /12-Factor-App
+CMD python app.py
+(venv) ➜  12-Factor-App git:(main) ✗ 
+```
+- Check My Tutorials for Docker [Here](https://moalaaelden.wordpress.com/category/docker/) and [Here](https://moalaa.com/categories/#docker)
+
 ## 3. Config
 Store config in the environment
 ## 4. Backing services
@@ -67,4 +134,4 @@ Treat logs as event streams
 ## 12. Admin processes
 Run admin/management tasks as one-off processes
 
-[Reference and more details:](https://moalaaelden.wordpress.com/2022/10/24/install-docker-engine-on-ubuntu-18-04-lts-20-04-lts-21-10-lts-22-04-lts-2/ "MoAlaaElden")
+[References from 12factor](https://12factor.net/ "12factor")
