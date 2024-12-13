@@ -32,6 +32,18 @@ One codebase tracked in revision control, many deploys
 
 ![Codebase1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase1.png)
 
+Multiple apps sharing the same code is a violation of twelve-factor.
+
+![Codebase2]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase2.png)
+
+The solution here is to factor shared code into libraries which can be included through the dependency manager.
+
+![Codebase3]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase3.png)
+
+There is only one codebase per app, but there will be many deploys of the app. A deploy is a running instance of the app. This is typically a production site, and one or more staging sites.
+
+![Codebase4]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/1-Codebase4.png)
+
 ## 2. Dependencies
 Explicitly declare and isolate dependencies
 ## 3. Config
