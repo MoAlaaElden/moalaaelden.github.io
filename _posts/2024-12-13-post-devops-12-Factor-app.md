@@ -123,6 +123,7 @@ Store config in the environment
 When building apps, it’s important to manage settings (called *configuration*) that can change based on where your app is running—like on your laptop, a test server, or live for users. Here's what you need to know:
 
 ### App Configuration
+
 **What is App Configuration?**
 
 It includes:
@@ -131,6 +132,7 @@ It includes:
 - Deployment-specific details like website addresses.
 
 ### Hardcoding Config
+
 **Why Avoid Hardcoding Config?**
 
 Some apps store these settings directly in their code. That’s risky because:
@@ -138,6 +140,7 @@ Some apps store these settings directly in their code. That’s risky because:
 - It could expose sensitive info if someone sees your code.
 
 ### Config Files
+
 **What's Wrong with Config Files?**
 
 Using files to store settings (like `config.yml`) is better than hardcoding but has issues:
@@ -146,6 +149,7 @@ Using files to store settings (like `config.yml`) is better than hardcoding but 
 - They might only work with specific programming languages.
 
 ### Environment Variables
+
 **The Best Solution Environment Variables**
 
 Environment variables are simple settings stored outside your app’s code. They’re:
@@ -176,6 +180,7 @@ if __name__ == "__main__":
 ```
 
 ### Keep It Simple
+
 Instead of grouping settings by environment (like "staging" or "production"), treat each setting as its own piece. This makes scaling up your app to more servers or users easier over time.
 
 Using these tips will make managing your app’s settings simpler, safer, and ready for any situation!
@@ -197,29 +202,28 @@ Scale out via the process model
 
 When building apps in Python, you need a plan for handling tasks (concurrency) and growing your app to handle more users (scaling). Here’s a simple guide:  
 
----
-
 ### Processes
+
 **What Are Processes?**
 
 A process is just a running program. Apps can have one or more processes, each doing different tasks. For example:  
 - A **web process** handles user requests (e.g., with Django or Flask).  
 - A **worker process** handles background jobs (e.g., with Celery or RQ).  
 
----
 
 ### Multiple Processes
+
 **Why Use Multiple Processes?**
 
 Using multiple processes lets your app:  
 1. **Handle Different Workloads**: Assign specific tasks to different processes (e.g., web requests vs. background tasks).  
 2. **Scale Easily**: Add more processes to handle more traffic without changing your app’s code.  
 
----
 
 ![Concurrency1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/8-Concurrency1.png)
 
 ### Concurrency in Python
+
 **How to Manage Concurrency in Python**
 
 Python has tools to handle tasks efficiently:  
@@ -227,7 +231,6 @@ Python has tools to handle tasks efficiently:
 - **Async/await**: For event-driven tasks (e.g., `asyncio`).  
 - **Processes**: For running independent tasks in parallel (`multiprocessing`).  
 
----
 
 ### How to Scale Your App
 
@@ -238,7 +241,6 @@ Python has tools to handle tasks efficiently:
 
 2. **Organize Processes**: Define what each process does (e.g., web or worker) and how many of each to run.  
 
----
 
 ### Tools to Simplify Scaling
 
@@ -246,24 +248,27 @@ Python has tools to handle tasks efficiently:
 - **Celery**: Runs background tasks (like sending emails).  
 - **Foreman** or **Honcho**: Helps manage multiple processes during development.  
 
----
 
 ### Best Practices
 
 - Let the OS or tools like **Docker** or **systemd** handle process restarts and logs.  
-- Avoid manually managing processes (e.g., no PID files).  
-
----
+- Avoid manually managing processes (e.g., no PID files).
 
 By using multiple processes and the right tools, you can make your Python app scalable, efficient, and ready for any workload!  
 
 # 9. Disposability
+
 Maximize robustness with fast startup and graceful shutdown
+
 # 10. Dev/prod parity
+
 Keep development, staging, and production as similar as possible
 # 11. Logs
+
 Treat logs as event streams
+
 # 12. Admin processes
+
 Run admin/management tasks as one-off processes
 
 [References from 12factor](https://12factor.net/ "12factor")
