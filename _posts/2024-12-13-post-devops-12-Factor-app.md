@@ -1,13 +1,19 @@
 ---
 title: "DevOps - The Twelve Factor App methodology"
 header:
-  image: /assets/images/12-Factor-App/12-factor-app.png
-last_modified_at: 2024-12-13
+  image: /assets/images/12-Factor-App/12-Factor-app.webp
+last_modified_at: 2024-12-16
 categories:
+  - SaaS
   - DevOps
+  - Python
+  - Docker
 tags:
+  - SaaS
   - Apps
   - DevOps
+  - Python
+  - Docker
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -27,6 +33,9 @@ In the modern era, Software is commonly delivered as a service: called web apps,
 The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).
 
 # The Twelve Factors
+
+![12factor]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/12-factor-app.png)
+
 ## 1. Codebase
 One codebase tracked in revision control, many deploys
 
