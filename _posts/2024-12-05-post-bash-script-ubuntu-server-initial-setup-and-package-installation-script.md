@@ -8,19 +8,23 @@ categories:
   - Linux
   - Ubuntu
   - Server
+  - Docker
+  - Docker-Compose
 tags:
   - Bash-Script
   - Linux
   - Filesystem
   - Ubuntu
   - Root
+  - Docker
+  - Docker-Compose
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
 
 # Ubuntu Server Initial Setup and Package Installation Script
 
-This is a Bash script to update and upgrade Ubuntu, and install the necessary packages. I'll create a comprehensive script that includes best practices for server setup.
+This is a Bash script to update and upgrade Ubuntu, and install the necessary Dev packages. This is a comprehensive script that includes best practices for Initial server setup.
 
 ```bash
 #!/bin/bash
