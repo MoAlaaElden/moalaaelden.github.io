@@ -13,40 +13,140 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+# Theme Settings
 logo: "/assets/images/logo.jpg"
-title: MoAlaa
+masthead_title: "MoAlaa.com" # overrides the website title displayed in the masthead
+breadcrumbs: true # enabled by default
+
+# Site Information
+title: "MoAlaa | NetDevOps & Network Automation Expert"
+name: "Mohamed Alaa"
 email: mohammed.3laa@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  With years of experience in networking and automation, I'm here to share insights, 
-  tips, and the latest trends in the world of NetDevOps.
+  Expert insights on NetDevOps, Network Automation, DevOps, and Cloud Infrastructure. 
+  17+ years of network engineering experience with 7+ years in Python automation.
+  Join me on the journey to automate everything!
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://moalaaelden.github.io" # the base hostname & protocol for your site
+repository: "MoAlaaElden/moalaaelden.github.io"
+
+# Social Media
 twitter_username: MoAlaaElden
 github_username: MoAlaaElden
-minimal_mistakes_skin: default
+linkedin_username: moalaaelden
+
+# Theme Configuration
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
+search_full_content: true # Enable full content search
+search_provider: lunr
+
+# Site Author
+author:
+  name: "Mohamed Alaa"
+  avatar: "/assets/images/moalaa_400x400.jpg"
+  bio: "🚀 NetDevOps Expert | Network Automation Enthusiast | Python Developer<br/>
+        📡 17+ years Network Engineering | 7+ years Automation<br/>
+        💡 Sharing insights on modern networking & automation"
+  location: "Egypt"
+  email: "mohammed.3laa@gmail.com"
+  links:
+    - label: "🌐 Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://moalaa.com"
+    - label: "💼 LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/moalaaelden/"
+    - label: "🐦 Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/MoAlaaElden"
+    - label: "🔧 GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/MoAlaaElden"
+    - label: "📝 WordPress"
+      icon: "fab fa-fw fa-wordpress"
+      url: "https://moalaaelden.wordpress.com/"
+
+# Site Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/moalaaelden/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/MoAlaaElden"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/MoAlaaElden"
+    - label: "WordPress Blog"
+      icon: "fab fa-fw fa-wordpress"
+      url: "https://moalaaelden.wordpress.com/"
+    - label: "RSS Feed"
+      icon: "fas fa-fw fa-rss-square"
+      url: "/feed.xml"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+
+# Exclude from processing.
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
 # Build settings
-markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-include:
-  - _pages
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+timezone: Africa/Cairo
 
 # Plugins (previously gems:)
 plugins:
@@ -56,43 +156,34 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-seo-tag
 
-author:
-  name: "Mohamed Alaa"
-  avatar: "/assets/images/moalaa_400x400.jpg"
-  bio: "Join me on my NetDevOps journey as we explore the future of networking, automation, and everything in between!."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://moalaa.com"
-    - label: "Wordpress"
-      icon: "fab fa-fw fa-wordpress"
-      url: "https://moalaaelden.wordpress.com/"
-    - label: "Linkedin"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/moalaaelden/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/MoAlaaElden"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/MoAlaaElden"
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-seo-tag
 
-footer:
-  links:
-    - label: "Wordpress"
-      icon: "fab fa-fw fa-wordpress"
-      url: "https://moalaaelden.wordpress.com/"
-    - label: "Linkedin"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/moalaaelden/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/MoAlaaElden"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/MoAlaaElden"
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -102,9 +193,16 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       comments: true
       share: true
       related: true
+      toc: true
+      toc_sticky: true
+      toc_label: "Contents"
+      toc_icon: "cog"
+      sidebar:
+        nav: "docs"
   # _pages
   - scope:
       path: "_pages"
@@ -112,10 +210,72 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "docs"
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# Social Sharing
+twitter:
+  username: &twitter "MoAlaaElden"
+
+# Facebook
+facebook:
+  username: &facebook "moalaaelden"
+  app_id: # Facebook App ID
+  publisher: # Facebook Page URL
+
+# SEO Related
+google_site_verification: # Add your Google verification code
+bing_site_verification: # Add your Bing verification code
+yandex_site_verification: # Add your Yandex verification code
+naver_site_verification: # Add your Naver verification code
+
+# Social
+social:
+  type: Person # Person or Organization (defaults to Person)
+  name: Mohamed Alaa # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+    - "https://twitter.com/MoAlaaElden"
+    - "https://www.linkedin.com/in/moalaaelden/"
+    - "https://github.com/MoAlaaElden"
+
+# Analytics
+analytics:
+  provider: "google-gtag" # Google Analytics GA4, "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id: "G-SE3D5TD439" # Your GA4 tracking ID
+    anonymize_ip: false # true, false (default)
+
+# Site Search
+# For Google Custom Search Engine
+# google:
+#   search_engine_id: # YOUR_SEARCH_ENGINE_ID
+#   instant_search: # false (default), true
+
+# Comments
+comments:
+  provider: "google-gtag" # Google Analytics GA4, "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  disqus:
+    shortname: # Add your Disqus shortname
+  discourse:
+    server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid:
+    num_posts: # 5 (default)
+    colorscheme: # "light" (default), "dark"
+  utterances:
+    theme: # "github-light" (default), "github-dark"
+    issue_term: # "pathname" (default)
+  giscus:
+    repo_id: # Shown during giscus setup at https://giscus.app
+    category_name: # Full text name of the category
+    category_id: # Shown during giscus setup at https://giscus.app
+    discussion_term: # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled: # '1' for enabled (default), '0' for disabled
+    theme: # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+
+# reCaptcha
+# For new keys: https://www.google.com/recaptcha/admin/create
+reCaptcha:
+  siteKey: # Add your reCAPTCHA site key
+  secret: # Add your reCAPTCHA secret key
