@@ -251,7 +251,7 @@ analytics:
 
 # Comments
 comments:
-  provider: "google-gtag" # Google Analytics GA4, "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider: false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname: # Add your Disqus shortname
   discourse:
