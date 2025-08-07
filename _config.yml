@@ -47,27 +47,25 @@ search_provider: lunr
 author:
   name: "Mohamed Alaa"
   avatar: "/assets/images/moalaa_400x400.jpg"
-  bio: "🚀 NetDevOps Expert | Network Automation Enthusiast | Python Developer<br/>
-        📡 17+ years Network Engineering | 7+ years Automation<br/>
-        💡 Sharing insights on modern networking & automation"
+  bio: "Join me on my NetDevOps journey as we explore the future of networking, automation, and everything in between!."
   location: "Egypt"
   email: "mohammed.3laa@gmail.com"
   links:
-    - label: "🌐 Website"
+    - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://moalaa.com"
-    - label: "💼 LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/moalaaelden/"
-    - label: "🐦 Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/MoAlaaElden"
-    - label: "🔧 GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/MoAlaaElden"
-    - label: "📝 WordPress"
+    - label: "Wordpress"
       icon: "fab fa-fw fa-wordpress"
       url: "https://moalaaelden.wordpress.com/"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/moalaaelden/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/MoAlaaElden"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/MoAlaaElden"
 
 # Site Footer
 footer:
