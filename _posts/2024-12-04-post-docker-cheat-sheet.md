@@ -1,17 +1,17 @@
 ---
 title: "Docker Cheat-Sheet"
 header:
-  image: /assets/images/Docker-cheat-sheet.png
+ image: /assets/images/Docker-cheat-sheet.png
 last_modified_at: 2022-12-04
 categories:
-  - Docker
-  - Cheat-Sheet
+ - Docker
+ - Cheat-Sheet
 tags:
-  - Docker
-  - Application-Containers
-  - Containers
-  - Network-Automation
-  - Cheat-Sheet
+ - Docker
+ - Application-Containers
+ - Containers
+ - Network-Automation
+ - Cheat-Sheet
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -42,13 +42,13 @@ toc_sticky: true # Sticky Table of Contents
 | `docker stop $(docker ps -a -q)` | To stop all the stopped and running containers |
 | `docker kill $(docker ps -q)` | To kill all the running containers |
 | `docker kill $(docker ps -a -q)` | To kill all the stopped and running containers |
-| `docker restart $(docker ps  -q)` | To restart all  running containers |
+| `docker restart $(docker ps -q)` | To restart all running containers |
 | `docker restart $(docker ps -a -q)` | To restart all the stopped and running containers |
-| `docker rm $(docker ps  -q)` | To destroy all running containers |
+| `docker rm $(docker ps -q)` | To destroy all running containers |
 | `docker rm $(docker ps -a -q)` | To destroy all the stopped and running containers |
-| `docker pause $(docker ps  -q)` | To pause all  running containers |
+| `docker pause $(docker ps -q)` | To pause all running containers |
 | `docker pause $(docker ps -a -q)` | To pause all the stopped and running containers |
-| `docker start $(docker ps  -q)` | To start all  running containers |
+| `docker start $(docker ps -q)` | To start all running containers |
 | `docker start $(docker ps -a -q)` | To start all the stopped and running containers |
 | `docker rm -vf $(docker ps -a -q)` | To delete all containers including its volumes use |
 | `docker rmi -f $(docker images -a -q)` | To delete all the images |

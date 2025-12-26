@@ -1,14 +1,14 @@
 ---
 title: "WSL Cheat-Sheet"
 header:
-  image: /assets/images/linux-on-windows.webp
+ image: /assets/images/linux-on-windows.webp
 last_modified_at: 2022-12-04
 categories:
-  - WSL
-  - Cheat-Sheet
+ - WSL
+ - Cheat-Sheet
 tags:
-  - WSL
-  - Cheat-Sheet
+ - WSL
+ - Cheat-Sheet
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---

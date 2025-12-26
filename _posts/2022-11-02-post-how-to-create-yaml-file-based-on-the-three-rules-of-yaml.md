@@ -1,18 +1,18 @@
 ---
 title: "How To Create YAML file based on The Three Rules of YAML"
 header:
-  image: /assets/images/yaml-file.webp
+ image: /assets/images/yaml-file.webp
 last_modified_at: 2022-11-02
 categories:
-  - Python
-  - YAML
-  - JSON
-  - Network-Automation
+ - Python
+ - YAML
+ - JSON
+ - Network-Automation
 tags:
-  - Python
-  - YAML
-  - JSON
-  - Network-Automation
+ - Python
+ - YAML
+ - JSON
+ - Network-Automation
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -42,19 +42,19 @@ toc_sticky: true # Sticky Table of Contents
 ```yaml
 ---
 ios:
-  platform: ios
-  connection_options:
-    netmiko:
-      platform: cisco_ios
-      extras:
-        global_delay_factor: 5
+ platform: ios
+ connection_options:
+  netmiko:
+   platform: cisco_ios
+   extras:
+    global_delay_factor: 5
 nxos:
-  platform: nxos
-  connection_options:
-    netmiko:
-      platform: cisco_nxos
-      extras:
-        global_delay_factor: 5
+ platform: nxos
+ connection_options:
+  netmiko:
+   platform: cisco_nxos
+   extras:
+    global_delay_factor: 5
 ```
 ### Rule 2: Colons
 
@@ -69,12 +69,12 @@ The same rule can be extended to a higher level and use **nested key-value** pai
 
 ```yaml
 interface:
-  name: xe-0/0/0
-  shutdown: false
-  subinterfaces:
-    xe-0/0/0.0:
-      ipv4:
-        address: 172.17.17.1/24
+ name: xe-0/0/0
+ shutdown: false
+ subinterfaces:
+  xe-0/0/0.0:
+   ipv4:
+    address: 172.17.17.1/24
 ```
 ### Rule 3: Dashes
 
@@ -83,9 +83,9 @@ interface:
 
 ```yaml
 interfaces:
-  - fa1/0/0
-  - fa4/0/0
-  - fa5/0/0
+ - fa1/0/0
+ - fa4/0/0
+ - fa5/0/0
 ```
 
 ## YAML vs JSON

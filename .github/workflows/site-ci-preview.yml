@@ -1,0 +1,70 @@
+name: Site CI & PR Preview
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '_config.yml'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Bundler and gems
+        run: |
+          gem install bundler -v '>=2'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --destination _site
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run internal link checker
+        run: python3 scripts/check_links.py
+
+      - name: Run html-proofer (optional, best-effort)
+        run: |
+          gem install html-proofer --no-document
+          htmlproofer ./_site --allow-hash-href --check-html || true
+
+  preview-deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site (again) for deployment
+        run: |
+          gem install bundler -v '>=2'
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build --destination _site
+
+      - name: Deploy preview to branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          destination_branch: "gh-pages-preview/${{ github.head_ref }}"
+          keep_history: false
+          user_name: "GitHub Actions"
+          user_email: "actions@github.com"

@@ -1,19 +1,19 @@
 ---
 title: "DevOps - The Twelve Factor App methodology"
 header:
-  image: /assets/images/12-Factor-App/12-Factor-app.webp
+ image: /assets/images/12-Factor-App/12-Factor-app.webp
 last_modified_at: 2024-12-16
 categories:
-  - SaaS
-  - DevOps
-  - Python
-  - Docker
+ - SaaS
+ - DevOps
+ - Python
+ - Docker
 tags:
-  - SaaS
-  - Apps
-  - DevOps
-  - Python
-  - Docker
+ - SaaS
+ - Apps
+ - DevOps
+ - Python
+ - Docker
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -66,37 +66,37 @@ Explicitly declare and isolate dependencies
 - Check My Tutorial for [How to Create an Isolated Python Development Environment using venv](https://moalaa.com/python/venv/virtual-environment/network-automation/how-to-create-an-isolated-python-development-environment-using-venv/)
 
 ```bash
-➜  12-Factor-App git:(main) ✗ python3 -m venv venv
-➜  12-Factor-App git:(main) ✗ ls
-app.py  requirements.txt  venv
-➜  12-Factor-App git:(main) ✗
-➜  12-Factor-App git:(main) ✗ source venv/bin/activate
-(venv) ➜  12-Factor-App git:(main) ✗
+➜ 12-Factor-App git:(main) ✗ python3 -m venv venv
+➜ 12-Factor-App git:(main) ✗ ls
+app.py requirements.txt venv
+➜ 12-Factor-App git:(main) ✗
+➜ 12-Factor-App git:(main) ✗ source venv/bin/activate
+(venv) ➜ 12-Factor-App git:(main) ✗
 ```
 
 - It declares all dependencies, completely and exactly, via a dependency declaration manifest.
 
 ```python
-(venv) ➜  12-Factor-App git:(main) ✗ cat app.py
+(venv) ➜ 12-Factor-App git:(main) ✗ cat app.py
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def welcomeToMoAlaa():
-    return "Welcome to MoAlaa"
+  return "Welcome to MoAlaa"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+  app.run(host="0.0.0.0", debug=True)
 
-(venv) ➜  12-Factor-App git:(main) ✗
+(venv) ➜ 12-Factor-App git:(main) ✗
 ```
 
 ```bash
-(venv) ➜  12-Factor-App git:(main) ✗ cat requirements.txt
+(venv) ➜ 12-Factor-App git:(main) ✗ cat requirements.txt
 flask==2.1.3
 Werkzeug==2.2.2
-(venv) ➜  12-Factor-App git:(main) ✗
+(venv) ➜ 12-Factor-App git:(main) ✗
 ```
 ### System Tools Isolation 
 
@@ -107,18 +107,18 @@ Werkzeug==2.2.2
 - The isolation and security lets you run many containers simultaneously on a given host.
 
 ```bash
-(venv) ➜  12-Factor-App git:(main) ✗ ls
-Dockerfile  app.py  requirements.txt  venv
+(venv) ➜ 12-Factor-App git:(main) ✗ ls
+Dockerfile app.py requirements.txt venv
 ```
 ```bash
-(venv) ➜  12-Factor-App git:(main) ✗ cat Dockerfile
+(venv) ➜ 12-Factor-App git:(main) ✗ cat Dockerfile
 FROM python:3:10-alpine
 WORKDIR /12-Factor-App
 COPY requirements.txt /12-Factor-App
 RUN pip install -r requirements.txt --no-cache-dir
 COPY . /12-Factor-App
 CMD python app.py
-(venv) ➜  12-Factor-App git:(main) ✗ 
+(venv) ➜ 12-Factor-App git:(main) ✗ 
 ```
 - Check My Tutorials for Docker [Here](https://moalaaelden.wordpress.com/category/docker/) and [Here](https://moalaa.com/categories/#docker)
 
@@ -168,13 +168,13 @@ Environment variables are simple settings stored outside your app’s code. They
 - Supported by all programming languages and systems.
 
 ```bash
-(venv) ➜  12-Factor-App git:(main) ✗ cat .env
+(venv) ➜ 12-Factor-App git:(main) ✗ cat .env
 HOST="0.0.0.0"
 DEBUG="True"
 ```
 
 ```python
-(venv) ➜  12-Factor-App git:(main) ✗ cat app.py
+(venv) ➜ 12-Factor-App git:(main) ✗ cat app.py
 from flask import Flask
 import os
 
@@ -182,10 +182,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcomeToMoAlaa():
-    return "Welcome to MoAlaa"
+  return "Welcome to MoAlaa"
 
 if __name__ == "__main__":
-    app.run(host=os.getenv('HOST'), debug=os.getenv('DEBUG'))
+  app.run(host=os.getenv('HOST'), debug=os.getenv('DEBUG'))
 
 ```
 
@@ -208,26 +208,26 @@ Export services via port binding
 ## 8. Concurrency
 Scale out via the process model
 
-**Scaling Python Apps Made Simple**  
+**Scaling Python Apps Made Simple** 
 
-When building apps in Python, you need a plan for handling tasks (concurrency) and growing your app to handle more users (scaling). Here’s a simple guide:  
+When building apps in Python, you need a plan for handling tasks (concurrency) and growing your app to handle more users (scaling). Here’s a simple guide: 
 
 ### Processes
 
 **What Are Processes?**
 
-A process is just a running program. Apps can have one or more processes, each doing different tasks. For example:  
-- A **web process** handles user requests (e.g., with Django or Flask).  
-- A **worker process** handles background jobs (e.g., with Celery or RQ).  
+A process is just a running program. Apps can have one or more processes, each doing different tasks. For example: 
+- A **web process** handles user requests (e.g., with Django or Flask). 
+- A **worker process** handles background jobs (e.g., with Celery or RQ). 
 
 
 ### Multiple Processes
 
 **Why Use Multiple Processes?**
 
-Using multiple processes lets your app:  
-1. **Handle Different Workloads**: Assign specific tasks to different processes (e.g., web requests vs. background tasks).  
-2. **Scale Easily**: Add more processes to handle more traffic without changing your app’s code.  
+Using multiple processes lets your app: 
+1. **Handle Different Workloads**: Assign specific tasks to different processes (e.g., web requests vs. background tasks). 
+2. **Scale Easily**: Add more processes to handle more traffic without changing your app’s code. 
 
 
 ![Concurrency1]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/8-Concurrency1.png)
@@ -236,35 +236,35 @@ Using multiple processes lets your app:
 
 **How to Manage Concurrency in Python**
 
-Python has tools to handle tasks efficiently:  
-- **Threads**: For lightweight tasks within one process.  
-- **Async/await**: For event-driven tasks (e.g., `asyncio`).  
-- **Processes**: For running independent tasks in parallel (`multiprocessing`).  
+Python has tools to handle tasks efficiently: 
+- **Threads**: For lightweight tasks within one process. 
+- **Async/await**: For event-driven tasks (e.g., `asyncio`). 
+- **Processes**: For running independent tasks in parallel (`multiprocessing`). 
 
 
 ### How to Scale Your App
 
-1. **Add More Processes**: Instead of making one process bigger, run more processes across different machines (horizontal scaling).  
-   - Example: Use multiple web servers with a load balancer to share traffic.  
+1. **Add More Processes**: Instead of making one process bigger, run more processes across different machines (horizontal scaling). 
+  - Example: Use multiple web servers with a load balancer to share traffic. 
 
 ![Concurrency2]({{ site.url }}{{ site.baseurl }}/assets/images/12-Factor-App/8-Concurrency2.png)
 
-2. **Organize Processes**: Define what each process does (e.g., web or worker) and how many of each to run.  
+2. **Organize Processes**: Define what each process does (e.g., web or worker) and how many of each to run. 
 
 
 ### Tools to Simplify Scaling
 
-- **Gunicorn**: Manages web processes for Python frameworks like Django.  
-- **Celery**: Runs background tasks (like sending emails).  
-- **Foreman** or **Honcho**: Helps manage multiple processes during development.  
+- **Gunicorn**: Manages web processes for Python frameworks like Django. 
+- **Celery**: Runs background tasks (like sending emails). 
+- **Foreman** or **Honcho**: Helps manage multiple processes during development. 
 
 
 ### Best Practices
 
-- Let the OS or tools like **Docker** or **systemd** handle process restarts and logs.  
+- Let the OS or tools like **Docker** or **systemd** handle process restarts and logs. 
 - Avoid manually managing processes (e.g., no PID files).
 
-By using multiple processes and the right tools, you can make your Python app scalable, efficient, and ready for any workload!  
+By using multiple processes and the right tools, you can make your Python app scalable, efficient, and ready for any workload! 
 
 ## 9. Disposability
 

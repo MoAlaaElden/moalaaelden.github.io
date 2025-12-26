@@ -1,16 +1,16 @@
 ---
 title: "Most useful Linux networking Commands and Tools with their explanation"
 header:
-  image: /assets/images/Linux_networking_Commands.webp
+ image: /assets/images/Linux_networking_Commands.webp
 last_modified_at: 2022-12-04
 categories:
-  - Linux
-  - Ubuntu
-  - Networking
+ - Linux
+ - Ubuntu
+ - Networking
 tags:
-  - Linux
-  - Ubuntu
-  - Root
+ - Linux
+ - Ubuntu
+ - Root
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -70,12 +70,12 @@ moalaa@NetDevOps:~$
 - shows bandwidth and total data transferred.
 
 ## ifstat 
--  report network interfaces bandwidth.
+- report network interfaces bandwidth.
 
 ## iftop 
 - display bandwidth usage.
 
-## ip  
+## ip 
 - a command with more features than ifconfig.
 
 ## iperf3 
@@ -160,7 +160,7 @@ moalaa@NetDevOps:~$
 - Network Intrusion Detection and Prevention System.
 
 ## smokeping 
--  keeps track of your network latency.
+- keeps track of your network latency.
 
 ## socat 
 - establishes two bidirectional byte streams and transfers data between them.
@@ -175,7 +175,7 @@ moalaa@NetDevOps:~$
 - utility to investigate sockets.
 
 ## ssh 
--  secure system administration and file transfers over insecure networks.
+- secure system administration and file transfers over insecure networks.
 
 ## tcpdump 
 - command-line packet analyzer.
@@ -199,7 +199,7 @@ moalaa@NetDevOps:~$
 - Connection forwarder from/to web sockets to/from usual sockets, in style of socat.
 
 ## wget 
--  retrieving files using HTTP, HTTPS, FTP and FTPS.
+- retrieving files using HTTP, HTTPS, FTP and FTPS.
 
 ## iwconfig, iwlist, iwspy, iwpriv and ifrename.
 - Wireless Tools for Linux 

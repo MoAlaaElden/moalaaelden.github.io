@@ -1,16 +1,16 @@
 ---
 title: "The Linux filesystem and directory structure every Linux user should know"
 header:
-  image: /assets/images/linux-filesystem.webp
+ image: /assets/images/linux-filesystem.webp
 last_modified_at: 2023-06-01
 categories:
-  - Linux
-  - Ubuntu
+ - Linux
+ - Ubuntu
 tags:
-  - Linux
-  - Filesystem
-  - Ubuntu
-  - Root
+ - Linux
+ - Filesystem
+ - Ubuntu
+ - Root
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
