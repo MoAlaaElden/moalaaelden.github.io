@@ -29,8 +29,11 @@ jobs:
         run: |
           # Install bundler into user gem dir to avoid needing sudo on runners
           gem install bundler -v '>=2' --no-document --user-install || true
-          # Make gem user bin available in PATH
-          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          # Make gem user bin available for subsequent steps
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Also add it to PATH for this step so `bundle` is immediately available
+          export PATH="$GEM_BIN:$PATH"
           # Use vendor bundle to install gems locally without requiring system gem dir
           bundle config set path vendor/bundle
           bundle install --jobs 4 --retry 3 --path vendor/bundle
@@ -49,7 +52,10 @@ jobs:
         run: |
           # Install html-proofer into user gem dir to avoid permission errors
           gem install html-proofer --no-document --user-install || true
-          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Make it available in PATH for this step
+          export PATH="$GEM_BIN:$PATH"
           ruby -S htmlproofer ./_site --allow-hash-href --check-html || true
 
   preview-deploy:
@@ -64,7 +70,10 @@ jobs:
         run: |
           # Install bundler into user gem dir to avoid needing sudo on runners
           gem install bundler -v '>=2' --no-document --user-install || true
-          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Ensure bundle is available in this step
+          export PATH="$GEM_BIN:$PATH"
           bundle config set path vendor/bundle
           bundle install --jobs 4 --retry 3 --path vendor/bundle
           bundle exec jekyll build --destination _site
