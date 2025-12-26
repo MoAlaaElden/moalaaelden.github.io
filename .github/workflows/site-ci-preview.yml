@@ -8,6 +8,12 @@ on:
       - 'scripts/**'
       - '.github/workflows/**'
 
+# Grant permissions required for preview deploy (only used when job runs in main repo)
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-validate:
     runs-on: ubuntu-latest
