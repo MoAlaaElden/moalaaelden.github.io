@@ -17,6 +17,10 @@ for f in html_files:
         link = match.split('#')[0].split('?')[0]
         if not link or link.startswith('http') or link.startswith('mailto:') or link.startswith('tel:'):
             continue
+        # ignore theme docs and known theme asset patterns (e.g., Minimal Mistakes docs/images)
+        exclude_prefixes = ('/docs/', '/assets/images/mm-')
+        if any(link.startswith(p) for p in exclude_prefixes):
+            continue
         # handle fragments only
         if link.startswith('#'):
             continue
