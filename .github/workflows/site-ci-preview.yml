@@ -27,8 +27,13 @@ jobs:
 
       - name: Install Bundler and gems
         run: |
-          gem install bundler -v '>=2'
-          bundle install --jobs 4 --retry 3
+          # Install bundler into user gem dir to avoid needing sudo on runners
+          gem install bundler -v '>=2' --no-document --user-install || true
+          # Make gem user bin available in PATH
+          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          # Use vendor bundle to install gems locally without requiring system gem dir
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
@@ -42,8 +47,10 @@ jobs:
 
       - name: Run html-proofer (optional, best-effort)
         run: |
-          gem install html-proofer --no-document
-          htmlproofer ./_site --allow-hash-href --check-html || true
+          # Install html-proofer into user gem dir to avoid permission errors
+          gem install html-proofer --no-document --user-install || true
+          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          ruby -S htmlproofer ./_site --allow-hash-href --check-html || true
 
   preview-deploy:
     runs-on: ubuntu-latest
@@ -55,8 +62,11 @@ jobs:
 
       - name: Build site (again) for deployment
         run: |
-          gem install bundler -v '>=2'
-          bundle install --jobs 4 --retry 3
+          # Install bundler into user gem dir to avoid needing sudo on runners
+          gem install bundler -v '>=2' --no-document --user-install || true
+          echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
           bundle exec jekyll build --destination _site
 
       - name: Deploy preview to branch
