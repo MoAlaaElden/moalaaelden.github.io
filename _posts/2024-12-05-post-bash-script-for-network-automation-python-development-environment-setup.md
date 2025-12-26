@@ -1,24 +1,24 @@
 ---
 title: "Bash Script for Setting Up a Python Development Environment for Network Automation"
 header:
-  image: /assets/images/bash-script-for-network-automation-python-development-environment-setup.jpg
+ image: /assets/images/bash-script-for-network-automation-python-development-environment-setup.jpg
 last_modified_at: 2024-12-05
 categories:
-  - Bash-Script
-  - Python
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - Network-Automation
-  - NetDevOps
+ - Bash-Script
+ - Python
+ - Paramiko
+ - Netmiko
+ - NAPALM
+ - Network-Automation
+ - NetDevOps
 tags:
-  - Bash-Script
-  - Python
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - Network-Automation
-  - NetDevOps
+ - Bash-Script
+ - Python
+ - Paramiko
+ - Netmiko
+ - NAPALM
+ - Network-Automation
+ - NetDevOps
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -30,8 +30,8 @@ This is a comprehensive Bash script for setting up a Python virtual environment 
 
 # Ensure the script is run with sudo privileges
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root (use sudo)" 
-   exit 1
+  echo "This script must be run as root (use sudo)" 
+  exit 1
 fi
 
 # Detect the current user (for non-root operations)
@@ -44,24 +44,24 @@ apt update
 # Install system dependencies
 echo "Installing system dependencies..."
 apt install -y \
-    python3 \
-    python3-pip \
-    python3-venv \
-    python3-dev \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    zlib1g-dev \
-    graphviz \
-    libgraphviz-dev \
-    pkg-config \
-    snmp \
-    libsnmp-dev \
-    git \
-    wget \
-    curl
+  python3 \
+  python3-pip \
+  python3-venv \
+  python3-dev \
+  build-essential \
+  libssl-dev \
+  libffi-dev \
+  libxml2-dev \
+  libxslt1-dev \
+  zlib1g-dev \
+  graphviz \
+  libgraphviz-dev \
+  pkg-config \
+  snmp \
+  libsnmp-dev \
+  git \
+  wget \
+  curl
 
 # Create a directory for Python projects
 echo "Creating Python projects directory..."
@@ -82,41 +82,41 @@ pip install --upgrade pip setuptools wheel
 # Install network automation libraries
 echo "Installing network automation libraries..."
 pip install \
-    netmiko \
-    napalm \
-    nornir \
-    pyats[full] \
-    networkx \
-    textfsm \
-    python-dotenv \
-    pyyaml \
-    easysnmp \
-    graphviz \
-    paramiko \
-    jinja2 \
-    netaddr \
-    scapy \
-    ansible \
-    requests \
-    rich \
-    tabulate \
-    pandas \
-    pytest \
-    black \
-    pylint \
-    mypy
+  netmiko \
+  napalm \
+  nornir \
+  pyats[full] \
+  networkx \
+  textfsm \
+  python-dotenv \
+  pyyaml \
+  easysnmp \
+  graphviz \
+  paramiko \
+  jinja2 \
+  netaddr \
+  scapy \
+  ansible \
+  requests \
+  rich \
+  tabulate \
+  pandas \
+  pytest \
+  black \
+  pylint \
+  mypy
 
 # Additional useful libraries for network engineers
 echo "Installing additional useful libraries..."
 pip install \
-    ipython \
-    ipdb \
-    openpyxl \
-    xlrd \
-    cryptography \
-    netmiko \
-    nornir-netmiko \
-    nornir-utils
+  ipython \
+  ipdb \
+  openpyxl \
+  xlrd \
+  cryptography \
+  netmiko \
+  nornir-netmiko \
+  nornir-utils
 
 # Create a requirements.txt file
 echo "Creating requirements.txt file..."
@@ -160,12 +160,12 @@ echo "To activate: source ~/python-projects/network-automation/venv/bin/activate
 3. Creates a dedicated directory for Python projects
 4. Sets up a Python virtual environment
 5. Installs a comprehensive set of network automation libraries:
-   - Core network automation libraries: Netmiko, NAPALM, Nornir, pyATS
-   - Data manipulation: NetworkX, TextFSM, PyYAML
-   - Utility libraries: python-dotenv, graphviz
-   - Additional networking tools: Paramiko, Scapy, Netaddr
-   - Development tools: Black, Pylint, Pytest
-   - Extras: Pandas, Rich, Tabulate
+  - Core network automation libraries: Netmiko, NAPALM, Nornir, pyATS
+  - Data manipulation: NetworkX, TextFSM, PyYAML
+  - Utility libraries: python-dotenv, graphviz
+  - Additional networking tools: Paramiko, Scapy, Netaddr
+  - Development tools: Black, Pylint, Pytest
+  - Extras: Pandas, Rich, Tabulate
 
 ## Key features:
 - Creates a virtual environment in `~/python-projects/network-automation/venv`

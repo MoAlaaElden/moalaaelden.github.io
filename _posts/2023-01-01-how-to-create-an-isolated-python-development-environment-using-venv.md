@@ -1,18 +1,18 @@
 ---
 title: "How to Create an Isolated Python Development Environment using venv"
 header:
-  image: /assets/images/python-virtual-environment.webp
+ image: /assets/images/python-virtual-environment.webp
 last_modified_at: 2023-01-01
 categories:
-  - Python
-  - venv
-  - Virtual-Environment
-  - Network-Automation
+ - Python
+ - venv
+ - Virtual-Environment
+ - Network-Automation
 tags:
-  - Python
-  - venv
-  - Virtual-Environment
-  - Network-Automation
+ - Python
+ - venv
+ - Virtual-Environment
+ - Network-Automation
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -60,9 +60,9 @@ When you check the new `myproject` folder, you will notice that a new folder cal
 ```bash
 moalaa@NetDevOps:~/myproject$ ll
 total 12
-drwxrwxr-x  3 moalaa moalaa 4096 Dec 31 23:25 ./
+drwxrwxr-x 3 moalaa moalaa 4096 Dec 31 23:25 ./
 drwxr-xr-x 12 moalaa moalaa 4096 Dec 31 23:21 ../
-drwxrwxr-x  6 moalaa moalaa 4096 Dec 31 23:25 venv/
+drwxrwxr-x 6 moalaa moalaa 4096 Dec 31 23:25 venv/
 moalaa@NetDevOps:~/myproject$ cd venv
 
 moalaa@NetDevOps:~/myproject/venv$ ll
@@ -72,8 +72,8 @@ drwxrwxr-x 3 moalaa moalaa 4096 Dec 31 23:25 ../
 drwxrwxr-x 2 moalaa moalaa 4096 Dec 31 23:25 bin/
 drwxrwxr-x 2 moalaa moalaa 4096 Dec 31 23:25 include/
 drwxrwxr-x 3 moalaa moalaa 4096 Dec 31 23:25 lib/
-lrwxrwxrwx 1 moalaa moalaa    3 Dec 31 23:25 lib64 -> lib/
--rw-rw-r-- 1 moalaa moalaa   70 Dec 31 23:25 pyvenv.cfg
+lrwxrwxrwx 1 moalaa moalaa  3 Dec 31 23:25 lib64 -> lib/
+-rw-rw-r-- 1 moalaa moalaa  70 Dec 31 23:25 pyvenv.cfg
 drwxrwxr-x 3 moalaa moalaa 4096 Dec 31 23:25 share/
 moalaa@NetDevOps:~/myproject/venv$ 
 ```
@@ -98,11 +98,11 @@ pip list
 ```
 ```python
 (venv) moalaa@NetDevOps:~/myproject$ pip list
-Package       Version
+Package    Version
 ------------- -------
-pip           20.0.2 
-pkg-resources 0.0.0  
-setuptools    44.0.0 
+pip      20.0.2 
+pkg-resources 0.0.0 
+setuptools  44.0.0 
 (venv) moalaa@NetDevOps:~/myproject$ 
 ```
 
@@ -115,14 +115,14 @@ pip install django
 ```python
 (venv) moalaa@NetDevOps:~/myproject$ pip install django
 Collecting django
-  Downloading Django-4.1.4-py3-none-any.whl (8.1 MB)
-     |████████████████████████████████| 8.1 MB 25.2 MB/s 
+ Downloading Django-4.1.4-py3-none-any.whl (8.1 MB)
+   |████████████████████████████████| 8.1 MB 25.2 MB/s 
 Collecting backports.zoneinfo; python_version < "3.9"
-  Using cached backports.zoneinfo-0.2.1-cp38-cp38-manylinux1_x86_64.whl (74 kB)
+ Using cached backports.zoneinfo-0.2.1-cp38-cp38-manylinux1_x86_64.whl (74 kB)
 Collecting sqlparse>=0.2.2
-  Using cached sqlparse-0.4.3-py3-none-any.whl (42 kB)
+ Using cached sqlparse-0.4.3-py3-none-any.whl (42 kB)
 Collecting asgiref<4,>=3.5.2
-  Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
+ Downloading asgiref-3.6.0-py3-none-any.whl (23 kB)
 Installing collected packages: backports.zoneinfo, sqlparse, asgiref, django
 Successfully installed asgiref-3.6.0 backports.zoneinfo-0.2.1 django-4.1.4 sqlparse-0.4.3
 (venv) moalaa@NetDevOps:~/myproject$ 
@@ -133,15 +133,15 @@ You can view all installed libraries by using pip list:
 
 ```python
 (venv) moalaa@NetDevOps:~/myproject$ pip list
-Package            Version
+Package      Version
 ------------------ -------
-asgiref            3.6.0  
-backports.zoneinfo 0.2.1  
-Django             4.1.4  
-pip                20.0.2 
-pkg-resources      0.0.0  
-setuptools         44.0.0 
-sqlparse           0.4.3  
+asgiref      3.6.0 
+backports.zoneinfo 0.2.1 
+Django       4.1.4 
+pip        20.0.2 
+pkg-resources   0.0.0 
+setuptools     44.0.0 
+sqlparse      0.4.3 
 (venv) moalaa@NetDevOps:~/myproject$ 
 ```
 ### Generate requirements.txt
@@ -154,7 +154,7 @@ pip freeze > requirements.txt
 (venv) moalaa@NetDevOps:~/myproject$ pip freeze > requirements.txt
 (venv) moalaa@NetDevOps:~/myproject$ 
 (venv) moalaa@NetDevOps:~/myproject$ ls
-requirements.txt  venv
+requirements.txt venv
 (venv) moalaa@NetDevOps:~/myproject$ cat requirements.txt 
 asgiref==3.6.0
 backports.zoneinfo==0.2.1

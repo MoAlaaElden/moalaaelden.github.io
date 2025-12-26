@@ -114,11 +114,19 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - yarn.lock
   - Rakefile
   - README
   - tmp
+  - __pycache__
+  - "*.py[cod]"
+  - .env
+  - .venv
+  - venv
+  - .DS_Store
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
+  - .cache
 
 # Conversion
 markdown: kramdown

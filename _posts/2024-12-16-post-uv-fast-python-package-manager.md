@@ -1,19 +1,19 @@
 ---
 title: "UV: The Fast Python Package Manager - A Complete Guide"
 header:
-  image: /assets/images/uv.jpg
+ image: /assets/images/uv.jpg
 last_modified_at: 2024-12-16
 categories:
-  - Python
-  - DevOps
-  - Development
-  - Tools
+ - Python
+ - DevOps
+ - Development
+ - Tools
 tags:
-  - Python
-  - Package Management
-  - UV
-  - Development Tools
-  - Performance
+ - Python
+ - Package Management
+ - UV
+ - Development Tools
+ - Performance
 toc: true
 toc_sticky: true
 ---
@@ -94,10 +94,10 @@ This creates a clean project structure:
 ```
 my-web-app/
 ├── .gitignore
-├── .python-version    # Pins Python version
+├── .python-version  # Pins Python version
 ├── README.md
 ├── hello.py
-└── pyproject.toml     # Modern Python packaging
+└── pyproject.toml   # Modern Python packaging
 ```
 
 Adding dependencies and running your code:
@@ -134,10 +134,10 @@ UV includes built-in Python version management that replaces pyenv:
 ```bash
 # Install Python versions
 uv python install 3.12
-uv python install 3.11 3.12 3.13  # Multiple at once
+uv python install 3.11 3.12 3.13 # Multiple at once
 
 # Pin project to specific version
-uv python pin 3.12  # Creates .python-version
+uv python pin 3.12 # Creates .python-version
 
 # List available versions
 uv python list
@@ -153,23 +153,23 @@ UV uses modern dependency groups following PEP 735:
 [project]
 name = "my-app"
 dependencies = [
-    "fastapi>=0.100.0",
-    "sqlalchemy>=2.0.0",
+  "fastapi>=0.100.0",
+  "sqlalchemy>=2.0.0",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=7.4.0",
-    "black>=23.0.0",
+  "pytest>=7.4.0",
+  "black>=23.0.0",
 ]
 ```
 
 Managing dependency groups:
 
 ```bash
-uv add --dev pytest black        # Add to dev group
-uv sync                          # Install everything
-uv sync --no-dev                 # Production only
+uv add --dev pytest black    # Add to dev group
+uv sync             # Install everything
+uv sync --no-dev         # Production only
 ```
 
 ## Essential UV Commands
@@ -178,33 +178,33 @@ Here are the most common UV commands you'll use:
 
 ### Project Setup
 ```bash
-uv init myproject           # Create new project
-uv add requests             # Add dependency
-uv remove requests          # Remove dependency
-uv sync                     # Install from lockfile
+uv init myproject      # Create new project
+uv add requests       # Add dependency
+uv remove requests     # Remove dependency
+uv sync           # Install from lockfile
 ```
 
 ### Running Code
 ```bash
-uv run script.py            # Run in project environment
-uv run pytest               # Run tests
+uv run script.py      # Run in project environment
+uv run pytest        # Run tests
 ```
 
 ### Python Management
 ```bash
-uv python install 3.12      # Install Python version
-uv python pin 3.12          # Set project Python
+uv python install 3.12   # Install Python version
+uv python pin 3.12     # Set project Python
 ```
 
 ### Tool Usage
 ```bash
-uvx black .                 # Run tool temporarily
-uv tool install ruff        # Install tool globally
+uvx black .         # Run tool temporarily
+uv tool install ruff    # Install tool globally
 ```
 
 ### Package Management (pip-compatible)
 ```bash
-uv pip install requests     # Direct pip replacement
+uv pip install requests   # Direct pip replacement
 uv pip install -r requirements.txt
 ```
 

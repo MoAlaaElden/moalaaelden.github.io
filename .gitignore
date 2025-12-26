@@ -2,3 +2,35 @@ _site
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+
+# Bundler / Ruby
+.bundle
+vendor/bundle
+
+# Node / JS
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.bak
+
+# Logs and temp
+log/
+tmp/
+.cache/

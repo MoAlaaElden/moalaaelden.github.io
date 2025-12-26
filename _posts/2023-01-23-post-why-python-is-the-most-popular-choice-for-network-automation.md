@@ -1,18 +1,18 @@
 ---
 title: "Why Python is the Most Popular Choice for Network Automation?"
 header:
-  image: /assets/images/Network_Automation.webp
+ image: /assets/images/Network_Automation.webp
 last_modified_at: 2023-01-23
 categories:
-  - Python
-  - Netmiko
-  - NAPALM
-  - Network-Automation
+ - Python
+ - Netmiko
+ - NAPALM
+ - Network-Automation
 tags:
-  - Python
-  - Netmiko
-  - NAPALM
-  - Network-Automation
+ - Python
+ - Netmiko
+ - NAPALM
+ - Network-Automation
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -36,10 +36,10 @@ from netmiko import ConnectHandler
 
 # Define device connection parameters
 device = {
-    'device_type': 'cisco_ios',
-    'host': '192.168.1.1',
-    'username': 'admin',
-    'password': 'password',
+  'device_type': 'cisco_ios',
+  'host': '192.168.1.1',
+  'username': 'admin',
+  'password': 'password',
 }
 
 # Connect to the device
@@ -65,10 +65,10 @@ from napalm import get_network_driver
 
 # Define device connection parameters
 device = {
-    'hostname': '192.168.1.1',
-    'username': 'admin',
-    'password': 'password',
-    'optional_args': {'port': 1234},
+  'hostname': '192.168.1.1',
+  'username': 'admin',
+  'password': 'password',
+  'optional_args': {'port': 1234},
 }
 
 # Connect to the device using the Junos driver

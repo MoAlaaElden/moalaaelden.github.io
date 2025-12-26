@@ -1,43 +1,43 @@
 ---
 title: "How To Start Your Network Automation Journey?"
 header:
-  image: /assets/images/Network_Automation_Journey.jpg
+ image: /assets/images/Network_Automation_Journey.jpg
 last_modified_at: 2022-10-31
 categories:
-  - Python
-  - Network-Automation
-  - Configuration-Management
+ - Python
+ - Network-Automation
+ - Configuration-Management
 tags:
-  - Python
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - SSH
-  - Network-Automation
-  - vSwitches
-  - Container
-  - Linux
-  - SNMP
-  - VTYs
-  - REST-APIs
-  - NETCONF
-  - Configuration-Management
-  - PyEZ
-  - YANG
-  - YDK
-  - Script
-  - Open-Source
-  - CFEngine
-  - Chef
-  - Puppet
-  - SaltStack
-  - Ansible
-  - Agentless
-  - Telemetry
-  - NetFlow
-  - IPFIX
-  - sFlow
-  - Controllers
+ - Python
+ - Paramiko
+ - Netmiko
+ - NAPALM
+ - SSH
+ - Network-Automation
+ - vSwitches
+ - Container
+ - Linux
+ - SNMP
+ - VTYs
+ - REST-APIs
+ - NETCONF
+ - Configuration-Management
+ - PyEZ
+ - YANG
+ - YDK
+ - Script
+ - Open-Source
+ - CFEngine
+ - Chef
+ - Puppet
+ - SaltStack
+ - Ansible
+ - Agentless
+ - Telemetry
+ - NetFlow
+ - IPFIX
+ - sFlow
+ - Controllers
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -286,10 +286,10 @@ RP/0/0/CPU0:R11-XR1#crypto key generate dsa
 - One of the earliest full-featured configuration management systems out there, CFEngine has gone through several iterations and maintained relevance as OS has gone from the local data center to the cloud.
 - At the heart of the infrastructure automation framework, CFEngine is also a modeling and monitoring compliance engine, capable of sitting on a small footprint.
 - As recommended by CFEngine, steps toward identifying an initial desired state include:
-    1) model the desired state of your environment.
-    2) simulate configuration changes before committing them.
-    3) confirm the desired state and set for automatic self-healing.
-    4) collect reports on the differences between actual and desired states.
+  1) model the desired state of your environment.
+  2) simulate configuration changes before committing them.
+  3) confirm the desired state and set for automatic self-healing.
+  4) collect reports on the differences between actual and desired states.
 - CFEngine has a library of reusable data-driven models that will help users model their desired states.
 - These infrastructure patterns are designed to be reusable across the Enterprise.
 

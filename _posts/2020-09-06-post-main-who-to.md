@@ -2,10 +2,10 @@
 title: "MoAlaa How to Jekyll!"
 last_modified_at: 2024-09-06
 categories:
-  - blog
+ - blog
 tags:
-  - Jekyll
-  - update
+ - Jekyll
+ - update
 toc: true # On this page
 ---
 
@@ -45,76 +45,76 @@ Multi line blockquote with a cite reference:
 
 ## Tables
 
-| Employee         | Salary |                                                              |
-| --------         | ------ | ------------------------------------------------------------ |
-| [John Doe](#)    | $1     | Because that's all Steve Jobs needed for a salary.           |
-| [Jane Doe](#)    | $100K  | For all the blogging she does.                               |
-| [Fred Bloggs](#) | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
-| [Jane Bloggs](#) | $100B  | With hair like that?! Enough said.                           |
+| Employee     | Salary |                               |
+| --------     | ------ | ------------------------------------------------------------ |
+| [John Doe](#)  | $1   | Because that's all Steve Jobs needed for a salary.      |
+| [Jane Doe](#)  | $100K | For all the blogging she does.                |
+| [Fred Bloggs](#) | $100M | Pictures are worth a thousand words, right? So Jane × 1,000. |
+| [Jane Bloggs](#) | $100B | With hair like that?! Enough said.              |
 
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
+| cell1  | cell2  | cell3  |
+| cell4  | cell5  | cell6  |
 |-----------------------------|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
+| cell1  | cell2  | cell3  |
+| cell4  | cell5  | cell6  |
 |=============================|
-| Foot1   | Foot2   | Foot3   |
+| Foot1  | Foot2  | Foot3  |
 
 ## Definition Lists
 
 Definition List Title
-:   Definition list division.
+:  Definition list division.
 
 Startup
-:   A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.
+:  A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.
 
 #dowork
-:   Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.
+:  Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.
 
 Do It Live
-:   I'll let Bill O'Reilly [explain](https://www.youtube.com/watch?v=O_HyZ5aW76c "We'll Do It Live") this one.
+:  I'll let Bill O'Reilly [explain](https://www.youtube.com/watch?v=O_HyZ5aW76c "We'll Do It Live") this one.
 
 ## Unordered Lists (Nested)
 
-  * List item one 
-      * List item one 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
-  * List item two
-  * List item three
-  * List item four
+ * List item one 
+   * List item one 
+     * List item one
+     * List item two
+     * List item three
+     * List item four
+   * List item two
+   * List item three
+   * List item four
+ * List item two
+ * List item three
+ * List item four
 
 ## Ordered List (Nested)
 
-  1. List item one 
-      1. List item one 
-          1. List item one
-          2. List item two
-          3. List item three
-          4. List item four
-      2. List item two
-      3. List item three
-      4. List item four
-  2. List item two
-  3. List item three
-  4. List item four
+ 1. List item one 
+   1. List item one 
+     1. List item one
+     2. List item two
+     3. List item three
+     4. List item four
+   2. List item two
+   3. List item three
+   4. List item four
+ 2. List item two
+ 3. List item three
+ 4. List item four
 
 ## Forms
 
 <form>
-  <fieldset>
-    <legend>Personalia:</legend>
-    Name: <input type="text" size="30"><br>
-    Email: <input type="text" size="30"><br>
-    Date of birth: <input type="text" size="10">
-  </fieldset>
+ <fieldset>
+  <legend>Personalia:</legend>
+  Name: <input type="text" size="30"><br>
+  Email: <input type="text" size="30"><br>
+  Date of birth: <input type="text" size="10">
+ </fieldset>
 </form>
 
 ## Buttons
@@ -182,7 +182,7 @@ Make any link standout more when applying the `.btn` class.
 ### Address Tag
 
 <address>
-  1 Infinite Loop<br /> Cupertino, CA 95014<br /> United States
+ 1 Infinite Loop<br /> Cupertino, CA 95014<br /> United States
 </address>
 
 ### Anchor Tag (aka. Link)
@@ -262,7 +262,7 @@ Jekyll also offers powerful support for code snippets:
 
 ```ruby
 def print_hi(name)
-  puts "Hi, #{name}"
+ puts "Hi, #{name}"
 end
 print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
@@ -271,13 +271,13 @@ print_hi('Tom')
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-gh]:  https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
 
 > And this is how a quote looks.
 
 > Only one thing is impossible for God: To find any sense in any copyright law on the planet.
-  
+ 
 > <cite><a href="http://www.brainyquote.com/quotes/quotes/m/marktwain163473.html">Mark Twain</a></cite>
 
 A notice displays information that explains nearby content. Often used to call attention to a particular detail.
@@ -323,21 +323,21 @@ Want to wrap several paragraphs or other elements in a notice? Using Liquid to c
 {% endcapture %}
 
 <div class="notice">
-  {{ notice-2 | markdownify }}
+ {{ notice-2 | markdownify }}
 </div>
 
 Or you could skip the capture and stick with straight HTML.
 
 ```html
 <div class="notice">
-  <h4>Message</h4>
-  <p>A basic message.</p>
+ <h4>Message</h4>
+ <p>A basic message.</p>
 </div>
 ```
 
 <div class="notice">
-  <h4>Message</h4>
-  <p>A basic message.</p>
+ <h4>Message</h4>
+ <p>A basic message.</p>
 </div>
 
 Minimal Mistakes has been developed as a [Gem-based theme](http://jekyllrb.com/docs/themes/) for easier use, and 100% compatible with GitHub Pages when used as a remote theme.
@@ -369,21 +369,21 @@ To install as a Gem-based theme:
 
 1. Add the following to your `Gemfile`:
 
-   ```ruby
-   gem "minimal-mistakes-jekyll"
-   ```
+  ```ruby
+  gem "minimal-mistakes-jekyll"
+  ```
 
 2. Fetch and update bundled gems by running the following [Bundler](https://bundler.io/) command:
 
-   ```bash
-   bundle
-   ```
+  ```bash
+  bundle
+  ```
 
 3. Set the `theme` in your project's Jekyll `_config.yml` file:
 
-   ```yaml
-   theme: minimal-mistakes-jekyll
-   ```
+  ```yaml
+  theme: minimal-mistakes-jekyll
+  ```
 
 To update the theme run `bundle update`.
 
@@ -395,20 +395,20 @@ To install as a remote theme:
 
 1. Create/replace the contents of your `Gemfile` with the following:
 
-   ```ruby
-   source "https://rubygems.org"
+  ```ruby
+  source "https://rubygems.org"
 
-   gem "github-pages", group: :jekyll_plugins
-   gem "jekyll-include-cache", group: :jekyll_plugins
-   ```
+  gem "github-pages", group: :jekyll_plugins
+  gem "jekyll-include-cache", group: :jekyll_plugins
+  ```
 
 2. Add `jekyll-include-cache` to the `plugins` array of your `_config.yml`.
 
 3. Fetch and update bundled gems by running the following [Bundler](https://bundler.io/) command:
 
-   ```bash
-   bundle
-   ```
+  ```bash
+  bundle
+  ```
 
 4. Add `remote_theme: "mmistakes/minimal-mistakes@{{ site.data.theme.version }}"` to your `_config.yml` file. Remove any other `theme:` or `remote_theme:` entry.
 
@@ -425,7 +425,7 @@ You may also optionally specify a branch, [tag](https://github.com/mmistakes/min
 If you're hosting several Jekyll based sites under the same GitHub username you will have to use Project Pages instead of User Pages. Essentially you rename the repo to something other than **USERNAME.github.io** and create a `gh-pages` branch off of `master`. For more details on how to set things up check [GitHub's documentation](https://help.github.com/articles/user-organization-and-project-pages/).
 
 <figure>
-  <img src="{{ '/assets/images/mm-gh-pages.gif' | relative_url }}" alt="creating a new branch on GitHub">
+ <img src="{{ '/assets/images/mm-gh-pages.gif' | relative_url }}" alt="creating a new branch on GitHub">
 </figure>
 
 You can also install the theme by copying all of the theme files[^structure] into your project.
@@ -433,7 +433,7 @@ You can also install the theme by copying all of the theme files[^structure] int
 To do so fork the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes/fork), then rename the repo to **USERNAME.github.io** --- replacing **USERNAME** with your GitHub username.
 
 <figure>
-  <img src="{{ '/assets/images/mm-theme-fork-repo.png' | relative_url }}" alt="fork Minimal Mistakes">
+ <img src="{{ '/assets/images/mm-theme-fork-repo.png' | relative_url }}" alt="fork Minimal Mistakes">
 </figure>
 
 **GitHub Pages Alternatives:** Looking to host your site for free and install/update the theme painlessly? [Netlify][netlify-jekyll], [GitLab Pages][gitlab-jekyll], and [Continuous Integration (CI) services][ci-jekyll] have you covered. In most cases all you need to do is connect your repository to them, create a simple configuration file, and install the theme following the [Ruby Gem Method](#ruby-gem-method) above.
@@ -481,8 +481,8 @@ You'll need to create and edit these data files to customize them:
 - [`_data/ui-text.yml`][ui-text.yml] - UI text [documentation]({{ "/docs/ui-text/" | relative_url }})
 - [`_data/navigation.yml`][navigation.yml] - navigation [documentation]({{ "/docs/navigation/" | relative_url }})
 
-  [ui-text.yml]: https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
-  [navigation.yml]: https://github.com/mmistakes/minimal-mistakes/blob/master/_data/navigation.yml
+ [ui-text.yml]: https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
+ [navigation.yml]: https://github.com/mmistakes/minimal-mistakes/blob/master/_data/navigation.yml
 
 ### Starting from `jekyll new`
 
@@ -505,9 +505,9 @@ Start by removing the following folders and any files within them:
 ├── _layouts
 ├── _sass
 ├── assets
-|  ├── css
-|  ├── fonts
-|  └── js
+| ├── css
+| ├── fonts
+| └── js
 ```
 
 You won't need these anymore as they're bundled with the theme gem --- unless you intend to [override them](https://jekyllrb.com/docs/themes/#overriding-theme-defaults).

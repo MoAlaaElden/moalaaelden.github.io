@@ -1,22 +1,22 @@
 ---
 title: "How To(1) Paramiko & Python for Network Automation"
 header:
-  image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
+ image: /assets/images/Paramiko-Python-For-Network-Engineers.jpg
 last_modified_at: 2023-01-01
 categories:
-  - Python
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - SSH
-  - Network-Automation
+ - Python
+ - Paramiko
+ - Netmiko
+ - NAPALM
+ - SSH
+ - Network-Automation
 tags:
-  - Python
-  - Paramiko
-  - Netmiko
-  - NAPALM
-  - SSH
-  - Network-Automation
+ - Python
+ - Paramiko
+ - Netmiko
+ - NAPALM
+ - SSH
+ - Network-Automation
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---
@@ -97,17 +97,17 @@ moalaa@devnet-automation-01:~$ ssh moalaa@R1.MoAlaa.com
 Password: 
 C
 
-             ____             _   _      _   
-            |  _ \  _____   _| \ | | ___| |_ 
-            | | | |/ _ \ \ / /  \| |/ _ \ __|
-            | |_| |  __/\ V /| |\  |  __/ |_ 
-            |____/ \___| \_/ |_| \_|\___|\__|
-                                             
-    _         _                        _   _             
-   / \  _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  
-  / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
+       ____       _  _   _  
+      | _ \ _____  _| \ | | ___| |_ 
+      | | | |/ _ \ \ / / \| |/ _ \ __|
+      | |_| | __/\ V /| |\ | __/ |_ 
+      |____/ \___| \_/ |_| \_|\___|\__|
+                       
+  _     _            _  _       
+  / \ _  _| |_ ___ _ __ ___  __ _| |_(_) ___ _ __ 
+ / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
  / ___ \ |_| | || (_) | | | | | | (_| | |_| | (_) | | | |
-/_/   \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+/_/  \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
 
 R1-ASR1#
 ```
@@ -171,10 +171,10 @@ Now, let’s connect to our Router:
 
 ```python
 >>> ssh_client.connect(hostname=hostname,
-...                    port=22,
-...                    username=username,
-...                    password=password,
-...                    look_for_keys=False, allow_agent=False)
+...          port=22,
+...          username=username,
+...          password=password,
+...          look_for_keys=False, allow_agent=False)
 >>> 
 ```
 
@@ -220,42 +220,42 @@ Now, we’ll try printing the output on our screen.
 >>> print(output.decode())
 C
 
-             ____             _   _      _   
-            |  _ \  _____   _| \ | | ___| |_ 
-            | | | |/ _ \ \ / /  \| |/ _ \ __|
-            | |_| |  __/\ V /| |\  |  __/ |_ 
-            |____/ \___| \_/ |_| \_|\___|\__|
-                                             
-    _         _                        _   _             
-   / \  _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  
-  / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
+       ____       _  _   _  
+      | _ \ _____  _| \ | | ___| |_ 
+      | | | |/ _ \ \ / / \| |/ _ \ __|
+      | |_| | __/\ V /| |\ | __/ |_ 
+      |____/ \___| \_/ |_| \_|\___|\__|
+                       
+  _     _            _  _       
+  / \ _  _| |_ ___ _ __ ___  __ _| |_(_) ___ _ __ 
+ / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
  / ___ \ |_| | || (_) | | | | | | (_| | |_| | (_) | | | |
-/_/   \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+/_/  \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
 
 
 R1-ASR1#terminal len 0
 R1-ASR1#show interfaces description
-Interface                      Status         Protocol Description
-Gi1                            up             up       
-Gi1.12                         up             up       Connection to R2-ASR2
-Gi1.13                         up             up       Connection to R3-ASR3
-Gi1.14                         up             up       Connection to R4-ASR4
-Gi1.15                         up             up       Connection to R5-ASR5
-Gi2                            up             up       "MANAGEMENT INTERFACE - DON'T TOUCH ME"
-Gi3                            admin down     down     "MNG - Int - PFSense FW"
-Lo0                            up             up       
-Lo7                            up             up       
-Lo8                            up             up       
-Lo100                          up             up       
-Lo101                          up             up       Configured with nornir-netmiko
-Lo102                          up             up       Configured with nornir-netmiko
-Lo200                          up             up       
-Lo201                          up             up       Configured with nornir-scrapli
-Lo202                          up             up       Configured with nornir-scrapli
-Lo300                          up             up       
-Lo301                          up             up       Configured with nornir-napalm
-Lo400                          up             up       
-Lo1000                         up             up       
+Interface           Status     Protocol Description
+Gi1              up       up    
+Gi1.12             up       up    Connection to R2-ASR2
+Gi1.13             up       up    Connection to R3-ASR3
+Gi1.14             up       up    Connection to R4-ASR4
+Gi1.15             up       up    Connection to R5-ASR5
+Gi2              up       up    "MANAGEMENT INTERFACE - DON'T TOUCH ME"
+Gi3              admin down   down   "MNG - Int - PFSense FW"
+Lo0              up       up    
+Lo7              up       up    
+Lo8              up       up    
+Lo100             up       up    
+Lo101             up       up    Configured with nornir-netmiko
+Lo102             up       up    Configured with nornir-netmiko
+Lo200             up       up    
+Lo201             up       up    Configured with nornir-scrapli
+Lo202             up       up    Configured with nornir-scrapli
+Lo300             up       up    
+Lo301             up       up    Configured with nornir-napalm
+Lo400             up       up    
+Lo1000             up       up    
 R1-ASR1#
 >>> 
 ```

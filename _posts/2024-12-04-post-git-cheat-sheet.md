@@ -1,14 +1,14 @@
 ---
 title: "Git Cheat-Sheet"
 header:
-  image: /assets/images/git-cheat-sheet-blog.webp
+ image: /assets/images/git-cheat-sheet-blog.webp
 last_modified_at: 2022-12-04
 categories:
-  - Git
-  - Cheat-Sheet
+ - Git
+ - Cheat-Sheet
 tags:
-  - Git
-  - Cheat-Sheet
+ - Git
+ - Cheat-Sheet
 toc: true # On this page
 toc_sticky: true # Sticky Table of Contents
 ---

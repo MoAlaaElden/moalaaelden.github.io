@@ -1,0 +1,97 @@
+name: Site CI & PR Preview
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '_config.yml'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+# Grant permissions required for preview deploy (only used when job runs in main repo)
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Bundler and gems
+        run: |
+          # Install bundler into user gem dir to avoid needing sudo on runners
+          gem install bundler -v '>=2' --no-document --user-install || true
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          # Make gem user bin available for subsequent steps
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Also add it to PATH for this step so `bundle` is immediately available
+          export PATH="$GEM_BIN:$PATH"
+          # Use vendor bundle to install gems locally without requiring system gem dir
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --destination _site
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run internal link checker
+        run: python3 scripts/check_links.py
+
+      - name: Run html-proofer (optional, best-effort)
+        run: |
+          # Install html-proofer into user gem dir to avoid permission errors
+          gem install html-proofer --no-document --user-install || true
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Make it available in PATH for this step
+          export PATH="$GEM_BIN:$PATH"
+          ruby -S htmlproofer ./_site --allow-hash-href --check-html || true
+
+  preview-deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-validate
+    # Only run deploy for pull requests where the head branch is in this repository (not forks).
+    # This prevents permission denied errors when workflows are triggered by forked PRs
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site (again) for deployment
+        run: |
+          # Install bundler into user gem dir to avoid needing sudo on runners
+          gem install bundler -v '>=2' --no-document --user-install || true
+          GEM_BIN="$(ruby -e 'print Gem.user_dir')/bin"
+          echo "$GEM_BIN" >> $GITHUB_PATH
+          # Ensure bundle is available in this step
+          export PATH="$GEM_BIN:$PATH"
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build --destination _site
+
+      - name: Deploy preview to branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          destination_branch: "gh-pages-preview/${{ github.head_ref }}"
+          keep_history: false
+          user_name: "GitHub Actions"
+          user_email: "actions@github.com"
