@@ -36,7 +36,7 @@ jobs:
           export PATH="$GEM_BIN:$PATH"
           # Use vendor bundle to install gems locally without requiring system gem dir
           bundle config set path vendor/bundle
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build --destination _site
@@ -75,7 +75,7 @@ jobs:
           # Ensure bundle is available in this step
           export PATH="$GEM_BIN:$PATH"
           bundle config set path vendor/bundle
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
+          bundle install --jobs 4 --retry 3
           bundle exec jekyll build --destination _site
 
       - name: Deploy preview to branch
